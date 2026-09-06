@@ -131,190 +131,6 @@ h2{color:#3b1d58; font-weight: bold;}
 .bg-body-secondary{--bs-aspect-ratio:55.25% !important;}
 		</style>
 		
-<style id="lbr-extra">
-/* ==========================================================================
-   MATERIA EM DUAS COLUNAS
-   Ideia do Renato: encostar o conteudo a esquerda, na mesma linha da marca, e
-   usar a faixa da direita, que hoje e vazio, para outras materias.
-
-   O tema entrega a coluna como col-md-9 com mx-auto, ou seja 75% da largura
-   centralizada, com espaco morto dos dois lados. Aqui ela passa a ocupar a
-   linha inteira e vira uma grade de duas colunas: leitura a esquerda, trilho
-   a direita.
-
-   O truque que torna isso possivel sem tocar no tema: o bloco "Veja tambem"
-   ja e filho direto dessa coluna, entao basta manda-lo para a segunda coluna
-   da grade. Nao ha conteudo novo sendo inventado, so realocado.
-   ========================================================================== */
-
-@media (min-width:992px){
-  .custom-single-post-style .col-md-9{
-    /* deixa de ser 9/12 centralizado e passa a ocupar a linha */
-    flex:0 0 100% !important;
-    max-width:100% !important;
-    width:100% !important;
-    margin-left:0 !important;
-    margin-right:0 !important;
-
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 320px;
-    column-gap:48px;
-    align-items:start;
-  }
-
-  /* Tudo que e leitura fica na coluna 1. */
-  .custom-single-post-style .col-md-9 > nav,
-  .custom-single-post-style .col-md-9 > article,
-  .custom-single-post-style .col-md-9 > .section-title{
-    grid-column:1;
-    min-width:0;
-  }
-
-  /* O trilho. grid-row generoso porque a coluna 1 tem tres filhos e o trilho
-     precisa poder acompanhar a altura toda. */
-  .custom-single-post-style .col-md-9 > .related-posts{
-    grid-column:2;
-    grid-row:1 / span 20;
-    margin-top:0 !important;
-    position:sticky;
-    top:96px;
-    align-self:start;
-  }
-
-  /* Titulo do trilho */
-  .custom-single-post-style .related-posts .section-title{
-    margin-bottom:14px;
-  }
-
-  /* No trilho as chamadas viram lista vertical compacta: miniatura a esquerda,
-     manchete a direita. Card grande de 16:9 nao cabe em 320px sem virar uma
-     coluna de fotos. */
-  .custom-single-post-style .related-posts .row > .col{
-    flex:0 0 100% !important;
-    width:100% !important;
-    max-width:100% !important;
-    padding:0 !important;
-    margin-top:18px !important;
-  }
-  .custom-single-post-style .related-posts .row > .col:first-child{margin-top:0 !important}
-  /* ATENCAO a especificidade: no artigo.css a moldura do card vem de um seletor
-     agrupado que inclui ".col > a", que tem um ELEMENTO no fim e por isso pesa
-     mais que so classes. Sem repetir esse mesmo seletor aqui, o border e o
-     height:100% de la continuavam vencendo mesmo com !important e mesmo vindo
-     depois. Era isso que desenhava a caixa em volta de cada chamada. */
-  .custom-single-post-style .related-posts .custom-tease-post,
-  .custom-single-post-style .related-posts .col > a{
-    display:flex !important;
-    flex-direction:row !important;
-    align-items:flex-start;
-    gap:15px;
-    border:0 !important;
-    border-bottom:1px solid var(--lbr-linha) !important;
-    border-radius:0 !important;
-    padding:0 0 18px !important;
-    margin:0 !important;
-    height:auto !important;
-    background:transparent !important;
-    box-shadow:none !important;
-  }
-  .custom-single-post-style .related-posts .row > .col:last-child .custom-tease-post{
-    border-bottom:0 !important;
-  }
-  .custom-single-post-style .related-posts .ratio{
-    flex:0 0 108px;
-    --bs-aspect-ratio:70% !important;
-    border-radius:8px;
-    overflow:hidden;
-  }
-  .custom-single-post-style .related-posts .card-body{
-    padding:0 !important;
-    min-width:0;
-    flex:1 1 auto;
-  }
-  .custom-single-post-style .related-posts .card-title,
-  .custom-single-post-style .related-posts .card-body a{
-    font-size:.92rem !important;
-    line-height:1.28 !important;
-  }
-  /* Sem moldura, o levantar do hover nao faz sentido: a reacao vira so a cor. */
-  .custom-single-post-style .related-posts .custom-tease-post:hover{
-    transform:none !important;
-    box-shadow:none !important;
-  }
-
-  /* Comentario volta a acompanhar a coluna de leitura, nao a linha inteira. */
-  .custom-single-post-style #disqus_thread{
-    max-width:none;
-    margin-left:0;
-    margin-right:0;
-    width:calc(100% - 368px);
-  }
-}
-
-/* Abaixo de 992px nada disso vale: a materia volta a ser uma coluna so e o
-   "Veja tambem" volta para o fim, que e onde ele funciona no celular. */
-
-/* ==========================================================================
-   TRILHO SEM FOTO, EM LISTA NUMERADA
-   Sugestao do Renato, e ela resolve dois problemas de uma vez: a miniatura de
-   108px comia um terco da largura do trilho e sobrava pouco para a manchete,
-   e o trilho inteiro podia ser mais estreito, devolvendo espaco para a coluna
-   de leitura.
-
-   O numero e contador de CSS, nao markup: o .col incrementa e o card imprime
-   no ::before. Como o card ja e flex em linha, o ::before entra como primeiro
-   item e ocupa o lugar que era da foto.
-   ========================================================================== */
-@media (min-width:992px){
-  .custom-single-post-style .col-md-9{
-    grid-template-columns:minmax(0,1fr) 274px;
-    column-gap:52px;
-  }
-  .custom-single-post-style #disqus_thread{width:calc(100% - 326px)}
-
-  .custom-single-post-style .related-posts .ratio{display:none !important}
-
-  .custom-single-post-style .related-posts .row{counter-reset:trilho}
-  .custom-single-post-style .related-posts .row > .col{counter-increment:trilho}
-  .custom-single-post-style .related-posts .custom-tease-post::before{
-    content:counter(trilho);
-    flex:0 0 26px;
-    font-family:'Archivo',Arial,sans-serif;
-    font-weight:800;
-    font-size:1.15rem;
-    line-height:1.15;
-    color:var(--lbr-roxo);
-    opacity:.42;
-    font-variant-numeric:tabular-nums;
-  }
-  /* Sem foto, a manchete pode crescer: e a unica coisa no trilho agora. */
-  .custom-single-post-style .related-posts .card-title,
-  .custom-single-post-style .related-posts .card-body a{
-    font-size:1rem !important;
-    line-height:1.3 !important;
-  }
-  .custom-single-post-style .related-posts .custom-tease-post,
-  .custom-single-post-style .related-posts .col > a{
-    gap:12px;
-    padding:0 0 15px !important;
-  }
-  .custom-single-post-style .related-posts .row > .col{margin-top:15px !important}
-}
-
-@media (min-width:992px){
-  /* O rotulo do trilho estava colado na primeira chamada: a regua do
-     section-title nao tem margem propria e o .col:first-child zera a dele. */
-  .custom-single-post-style .related-posts .section-title{
-    margin-bottom:0 !important;
-    padding-bottom:14px;
-    border-bottom:2px solid var(--lbr-roxo);
-  }
-  .custom-single-post-style .related-posts .section-title::after{content:none}
-  .custom-single-post-style .related-posts .row{margin-top:6px}
-  .custom-single-post-style .related-posts .row > .col:first-child{margin-top:14px !important}
-}
-
-</style>
 <style id="lbr-v2">
 /* ===== home-novo.css ===== */
 /* ==========================================================================
@@ -1861,6 +1677,190 @@ footer.footer > .mt-sm-4{
     to{ transform:scaleX(1); }
   }
 }
+</style>
+<style id="lbr-extra">
+/* ==========================================================================
+   MATERIA EM DUAS COLUNAS
+   Ideia do Renato: encostar o conteudo a esquerda, na mesma linha da marca, e
+   usar a faixa da direita, que hoje e vazio, para outras materias.
+
+   O tema entrega a coluna como col-md-9 com mx-auto, ou seja 75% da largura
+   centralizada, com espaco morto dos dois lados. Aqui ela passa a ocupar a
+   linha inteira e vira uma grade de duas colunas: leitura a esquerda, trilho
+   a direita.
+
+   O truque que torna isso possivel sem tocar no tema: o bloco "Veja tambem"
+   ja e filho direto dessa coluna, entao basta manda-lo para a segunda coluna
+   da grade. Nao ha conteudo novo sendo inventado, so realocado.
+   ========================================================================== */
+
+@media (min-width:992px){
+  .custom-single-post-style .col-md-9{
+    /* deixa de ser 9/12 centralizado e passa a ocupar a linha */
+    flex:0 0 100% !important;
+    max-width:100% !important;
+    width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    column-gap:48px;
+    align-items:start;
+  }
+
+  /* Tudo que e leitura fica na coluna 1. */
+  .custom-single-post-style .col-md-9 > nav,
+  .custom-single-post-style .col-md-9 > article,
+  .custom-single-post-style .col-md-9 > .section-title{
+    grid-column:1;
+    min-width:0;
+  }
+
+  /* O trilho. grid-row generoso porque a coluna 1 tem tres filhos e o trilho
+     precisa poder acompanhar a altura toda. */
+  .custom-single-post-style .col-md-9 > .related-posts{
+    grid-column:2;
+    grid-row:1 / span 20;
+    margin-top:0 !important;
+    position:sticky;
+    top:96px;
+    align-self:start;
+  }
+
+  /* Titulo do trilho */
+  .custom-single-post-style .related-posts .section-title{
+    margin-bottom:14px;
+  }
+
+  /* No trilho as chamadas viram lista vertical compacta: miniatura a esquerda,
+     manchete a direita. Card grande de 16:9 nao cabe em 320px sem virar uma
+     coluna de fotos. */
+  .custom-single-post-style .related-posts .row > .col{
+    flex:0 0 100% !important;
+    width:100% !important;
+    max-width:100% !important;
+    padding:0 !important;
+    margin-top:18px !important;
+  }
+  .custom-single-post-style .related-posts .row > .col:first-child{margin-top:0 !important}
+  /* ATENCAO a especificidade: no artigo.css a moldura do card vem de um seletor
+     agrupado que inclui ".col > a", que tem um ELEMENTO no fim e por isso pesa
+     mais que so classes. Sem repetir esse mesmo seletor aqui, o border e o
+     height:100% de la continuavam vencendo mesmo com !important e mesmo vindo
+     depois. Era isso que desenhava a caixa em volta de cada chamada. */
+  .custom-single-post-style .related-posts .custom-tease-post,
+  .custom-single-post-style .related-posts .col > a{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:flex-start;
+    gap:15px;
+    border:0 !important;
+    border-bottom:1px solid var(--lbr-linha) !important;
+    border-radius:0 !important;
+    padding:0 0 18px !important;
+    margin:0 !important;
+    height:auto !important;
+    background:transparent !important;
+    box-shadow:none !important;
+  }
+  .custom-single-post-style .related-posts .row > .col:last-child .custom-tease-post{
+    border-bottom:0 !important;
+  }
+  .custom-single-post-style .related-posts .ratio{
+    flex:0 0 108px;
+    --bs-aspect-ratio:70% !important;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .custom-single-post-style .related-posts .card-body{
+    padding:0 !important;
+    min-width:0;
+    flex:1 1 auto;
+  }
+  .custom-single-post-style .related-posts .card-title,
+  .custom-single-post-style .related-posts .card-body a{
+    font-size:.92rem !important;
+    line-height:1.28 !important;
+  }
+  /* Sem moldura, o levantar do hover nao faz sentido: a reacao vira so a cor. */
+  .custom-single-post-style .related-posts .custom-tease-post:hover{
+    transform:none !important;
+    box-shadow:none !important;
+  }
+
+  /* Comentario volta a acompanhar a coluna de leitura, nao a linha inteira. */
+  .custom-single-post-style #disqus_thread{
+    max-width:none;
+    margin-left:0;
+    margin-right:0;
+    width:calc(100% - 368px);
+  }
+}
+
+/* Abaixo de 992px nada disso vale: a materia volta a ser uma coluna so e o
+   "Veja tambem" volta para o fim, que e onde ele funciona no celular. */
+
+/* ==========================================================================
+   TRILHO SEM FOTO, EM LISTA NUMERADA
+   Sugestao do Renato, e ela resolve dois problemas de uma vez: a miniatura de
+   108px comia um terco da largura do trilho e sobrava pouco para a manchete,
+   e o trilho inteiro podia ser mais estreito, devolvendo espaco para a coluna
+   de leitura.
+
+   O numero e contador de CSS, nao markup: o .col incrementa e o card imprime
+   no ::before. Como o card ja e flex em linha, o ::before entra como primeiro
+   item e ocupa o lugar que era da foto.
+   ========================================================================== */
+@media (min-width:992px){
+  .custom-single-post-style .col-md-9{
+    grid-template-columns:minmax(0,1fr) 274px;
+    column-gap:52px;
+  }
+  .custom-single-post-style #disqus_thread{width:calc(100% - 326px)}
+
+  .custom-single-post-style .related-posts .ratio{display:none !important}
+
+  .custom-single-post-style .related-posts .row{counter-reset:trilho}
+  .custom-single-post-style .related-posts .row > .col{counter-increment:trilho}
+  .custom-single-post-style .related-posts .custom-tease-post::before{
+    content:counter(trilho);
+    flex:0 0 26px;
+    font-family:'Archivo',Arial,sans-serif;
+    font-weight:800;
+    font-size:1.15rem;
+    line-height:1.15;
+    color:var(--lbr-roxo);
+    opacity:.42;
+    font-variant-numeric:tabular-nums;
+  }
+  /* Sem foto, a manchete pode crescer: e a unica coisa no trilho agora. */
+  .custom-single-post-style .related-posts .card-title,
+  .custom-single-post-style .related-posts .card-body a{
+    font-size:1rem !important;
+    line-height:1.3 !important;
+  }
+  .custom-single-post-style .related-posts .custom-tease-post,
+  .custom-single-post-style .related-posts .col > a{
+    gap:12px;
+    padding:0 0 15px !important;
+  }
+  .custom-single-post-style .related-posts .row > .col{margin-top:15px !important}
+}
+
+@media (min-width:992px){
+  /* O rotulo do trilho estava colado na primeira chamada: a regua do
+     section-title nao tem margem propria e o .col:first-child zera a dele. */
+  .custom-single-post-style .related-posts .section-title{
+    margin-bottom:0 !important;
+    padding-bottom:14px;
+    border-bottom:2px solid var(--lbr-roxo);
+  }
+  .custom-single-post-style .related-posts .section-title::after{content:none}
+  .custom-single-post-style .related-posts .row{margin-top:6px}
+  .custom-single-post-style .related-posts .row > .col:first-child{margin-top:14px !important}
+}
+
 </style>
 </head>
 
