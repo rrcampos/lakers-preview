@@ -1730,6 +1730,99 @@ footer.footer > .mt-sm-4{
   margin-top:3px;
 }
 
+
+/* ===== bloco-estatisticas ===== */
+
+/* ==========================================================================
+   BLOCO DE ESTATISTICAS NA HOME
+   Medias zeradas ate a estreia, com aviso explicito: sem ele, zero parece
+   defeito em vez de espera.
+   ========================================================================== */
+.lbr-stats-wrap{margin-top:18px}
+.lbr-st-aviso{
+  font-size:.84rem !important;
+  color:var(--lbr-cinza);
+  margin:0 0 16px !important;
+  line-height:1.5 !important;
+}
+.lbr-stats{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+@media (min-width:576px){ .lbr-stats{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (min-width:992px){ .lbr-stats{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px} }
+
+.lbr-st-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:16px 10px 14px;
+  border:1px solid var(--lbr-linha);
+  border-radius:12px;
+  background:#fff;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+@media (hover:hover){
+  .lbr-st-card:hover{
+    transform:translateY(-4px);
+    border-color:#d6cee6;
+    box-shadow:0 12px 24px rgba(22,18,31,.12);
+  }
+  .lbr-st-card:hover .lbr-st-nome{color:var(--lbr-roxo)}
+}
+.lbr-st-foto{
+  display:block;
+  width:74px;height:74px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#f2eef8;
+  margin-bottom:10px;
+}
+.lbr-st-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.lbr-st-nome{
+  font-family:'Archivo',Arial,sans-serif;
+  font-weight:700;
+  font-size:.92rem;
+  line-height:1.2;
+  color:var(--lbr-tinta);
+  transition:color .18s ease;
+}
+.lbr-st-pos{
+  margin-bottom:12px;
+  font-size:.7rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lbr-cinza);
+  margin-top:4px;
+}
+.lbr-st-linha{
+  display:flex;
+  margin-top:auto;
+  justify-content:center;
+  gap:12px;
+  padding-top:11px;
+  border-top:1px solid var(--lbr-linha);
+  width:100%;
+}
+.lbr-st-linha > span{
+  display:flex;
+  flex-direction:column;
+  font-size:.62rem;
+  letter-spacing:.08em;
+  color:var(--lbr-cinza);
+}
+.lbr-st-linha b{
+  font-family:'Archivo',Arial,sans-serif;
+  font-size:1.02rem;
+  color:var(--lbr-tinta);
+  font-variant-numeric:tabular-nums;
+  line-height:1.15;
+  margin-bottom:2px;
+}
+
 </style>
 </head>
 
@@ -1811,36 +1904,116 @@ footer.footer > .mt-sm-4{
             
 	<div class="row g-5">
 		<div class="col-md-12" itemscope itemtype="https://schema.org/ItemList">
-                                                <a href="https://lakersbrasil.com/sandro-mamukelashvili/mamukelashvili-projecao-papel-banco-lakers/" class="card card-top-sm mb-3 position-relative" itemscope itemtype="https://schema.org/BlogPosting">
+                                                <a href="https://lakersbrasil.com/opiniao/banco-do-lakers-na-estreia-de-outubro/" class="card card-top-sm mb-3 position-relative" itemscope itemtype="https://schema.org/BlogPosting">
     <meta itemprop="position" content="1">
     <div class="ratio ratio-16x9">
-                    <img src="https://lakersbrasil.com/thumbor/Cw0ieGiOPoq3FV3bd4z9sI8LgxQ=/320x144/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg" srcset="
-                    https://lakersbrasil.com/thumbor/Cw0ieGiOPoq3FV3bd4z9sI8LgxQ=/320x144/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 320w,
-                    https://lakersbrasil.com/thumbor/q8M-1YFnoHVxjjTobZaRCIUka4I=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 480w,
-                    https://lakersbrasil.com/thumbor/T5ypEP_TFYfD-1HFW7PP_3WvR5A=/640x289/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 640w,
-                    https://lakersbrasil.com/thumbor/hafKfyI_XhoU_ajH5ZwEv92X4eY=/800x361/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 800w,
-                    https://lakersbrasil.com/thumbor/pqjSkiTmYauRTimVP7viQK3nZgw=/1000x451/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 1000w,
-                    https://lakersbrasil.com/thumbor/Q3VNUjTy2USi7G8zR1xKBh7rsS0=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 1200w,
-                    https://lakersbrasil.com/thumbor/YnzoQQB5LVN4pazNX6HvlrSMJi4=/1600x722/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 1600w,                     https://lakersbrasil.com/thumbor/egaDVyg3ELDOkHXSeBdU18Y7FGE=/2000x902/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 2000w" sizes="(max-width: 576px) 320px,
+                    <img src="https://lakersbrasil.com/thumbor/DCojlTEmkSx69HSyEZawXJpcUbM=/320x144/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg" srcset="
+                    https://lakersbrasil.com/thumbor/DCojlTEmkSx69HSyEZawXJpcUbM=/320x144/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 320w,
+                    https://lakersbrasil.com/thumbor/32luLHR2JxwaXKrGDqqkbgEL9Ok=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 480w,
+                    https://lakersbrasil.com/thumbor/gbMifxHtWFlK9zhd8msGu9_Sv5I=/640x289/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 640w,
+                    https://lakersbrasil.com/thumbor/z85vlq8JlU9uBovknApgzv29is0=/800x361/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 800w,
+                    https://lakersbrasil.com/thumbor/mWi8Uu15Jn-i4TtsvHoGiRc_z0g=/1000x451/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 1000w,
+                    https://lakersbrasil.com/thumbor/zwE76CxkRdCFvM4IFN18LAWAGOI=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 1200w,
+                    https://lakersbrasil.com/thumbor/-DfKPborOQ8VqPmCREi34S049Bw=/1600x722/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 1600w,                     https://lakersbrasil.com/thumbor/c1QizqMPOCSG_jmtFt3oOmBLjG8=/2000x902/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fbanco-lakers-estreia-outubro-2026-27.jpg 2000w" sizes="(max-width: 576px) 320px,
                        (max-width: 768px) 480px,
                        (max-width: 992px) 640px,
                        (max-width: 1200px) 800px,
-                       1000px" class="card-img-top notlazy" alt="Lakers: a projeção subestima o novo ala-pivô do time" itemprop="image" fetchpriority="high" decoding="async">
+                       1000px" class="card-img-top notlazy" alt="Quem sai do banco do Lakers na estreia de outubro" itemprop="image" fetchpriority="high" decoding="async">
                 <div class="card-img-overlay d-flex align-items-end">
-            <h2 class="card-title h1 m-0 text-uppercase text-white" itemprop="headline">Lakers: a projeção subestima o novo ala-pivô do time</h2>
+            <h2 class="card-title h1 m-0 text-uppercase text-white" itemprop="headline">Quem sai do banco do Lakers na estreia de outubro</h2>
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <meta itemprop="name" content="Renato Campos">
                 <meta itemprop="url" content="https://lakersbrasil.com/author/renato-campos/">
             </span>
-            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/sandro-mamukelashvili/mamukelashvili-projecao-papel-banco-lakers/">
+            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/opiniao/banco-do-lakers-na-estreia-de-outubro/">
         </div>
     </div>
 </a>
                                                                                         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                                                 <div class="col">
 
-    <a href="https://lakersbrasil.com/luka-doncic/doncic-video-zoando-austin-reaves/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
+    <a href="https://lakersbrasil.com/anthony-davis/volta-de-anthony-davis-ao-lakers-encerrada/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
         <meta itemprop="position" content="2">
+
+                    <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="image" content="https://lakersbrasil.com/thumbor/xrUUpIMMap08YBQcP4FVEORNRa4=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg">
+                <meta itemprop="width" content="1200">
+                <meta itemprop="height" content="541">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" sizes="(max-width: 576px) 300px,
+                        (max-width: 768px) 480px,
+                        (max-width: 992px) 590px,
+                        (max-width: 1200px) 768px,
+                        1024px" class="card-img-top lazy" alt="Lakers: a volta de Anthony Davis morreu na conta" fetchpriority="high" decoding="async" data-src="https://lakersbrasil.com/thumbor/2S6wIuP3pX4RG92b5S69fqY8t-Q=/100x45/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg" data-srcset="
+                        https://lakersbrasil.com/thumbor/glyljTBCM7GnALnWEDKgoJfCzCk=/300x135/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 300w,
+                        https://lakersbrasil.com/thumbor/yP-tZ9O1CZ12hri_sHZ1XdmusdQ=/390x176/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 390w,
+                        https://lakersbrasil.com/thumbor/9yXkknzY-CN-7mJjTljaNIrGXrc=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 480w,
+                        https://lakersbrasil.com/thumbor/QM4WKpBamoqhghgt9gQzUK0dx50=/590x266/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 590w,
+                        https://lakersbrasil.com/thumbor/5JXcxcUuhrfXqtCHs5vWGZn7yYM=/768x347/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 768w,
+                        https://lakersbrasil.com/thumbor/ykedtda1lVljG4zBDX_OLzm1BWs=/1024x462/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 1024w,
+                        https://lakersbrasil.com/thumbor/xrUUpIMMap08YBQcP4FVEORNRa4=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 1200w,
+                        https://lakersbrasil.com/thumbor/KTfqSLRH5eAKZxSV9zEX1Qw97o8=/1536x693/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 1536w,
+                        https://lakersbrasil.com/thumbor/25CQN2NpuDdrUmQzSoeufnRRhcg=/2048x924/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fanthony-davis-reencontro-lakers-encerrado.jpg 2048w">
+            </div>
+        
+        <div class="card-body py-2">
+            <h2 class="card-title h3 m-0" itemprop="headline">Lakers: a volta de Anthony Davis morreu na conta</h2>
+            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/anthony-davis/volta-de-anthony-davis-ao-lakers-encerrada/">
+
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="">
+                            </div>
+
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="Renato Campos">
+                <meta itemprop="url" content="https://lakersbrasil.com/author/renato-campos/">
+            </div>
+        </div>
+    </a>
+</div>
+                                                                                                                <div class="col">
+
+    <a href="https://lakersbrasil.com/sandro-mamukelashvili/mamukelashvili-projecao-papel-banco-lakers/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
+        <meta itemprop="position" content="3">
+
+                    <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="image" content="https://lakersbrasil.com/thumbor/Q3VNUjTy2USi7G8zR1xKBh7rsS0=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg">
+                <meta itemprop="width" content="1200">
+                <meta itemprop="height" content="541">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" sizes="(max-width: 576px) 300px,
+                        (max-width: 768px) 480px,
+                        (max-width: 992px) 590px,
+                        (max-width: 1200px) 768px,
+                        1024px" class="card-img-top lazy" alt="Lakers: a projeção subestima o novo ala-pivô do time" fetchpriority="high" decoding="async" data-src="https://lakersbrasil.com/thumbor/fN47PjNdOGnhsXKKxrCsc4cgujA=/100x45/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg" data-srcset="
+                        https://lakersbrasil.com/thumbor/mbrVoxnr3m6TDZxR0lPNwCbdU3g=/300x135/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 300w,
+                        https://lakersbrasil.com/thumbor/uGVuHOrTBEv4Qt06LbTRsO75xjE=/390x176/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 390w,
+                        https://lakersbrasil.com/thumbor/q8M-1YFnoHVxjjTobZaRCIUka4I=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 480w,
+                        https://lakersbrasil.com/thumbor/OfNmAtIOKSiDb7FyNmJUyMl6gcg=/590x266/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 590w,
+                        https://lakersbrasil.com/thumbor/4fAxbNfephhIVaV0cKQewV7VCTQ=/768x347/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 768w,
+                        https://lakersbrasil.com/thumbor/Yekfx0SKweLupz8kvGbqLktjijk=/1024x462/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 1024w,
+                        https://lakersbrasil.com/thumbor/Q3VNUjTy2USi7G8zR1xKBh7rsS0=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 1200w,
+                        https://lakersbrasil.com/thumbor/OYJG4jgb-dsB4SnPGIH0kXGxa_E=/1536x693/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 1536w,
+                        https://lakersbrasil.com/thumbor/vWnQAJU6Ar4uxwU5W4V-UROiuu0=/2048x924/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fsandro-mamukelashvili-papel-banco-lakers.jpg 2048w">
+            </div>
+        
+        <div class="card-body py-2">
+            <h2 class="card-title h3 m-0" itemprop="headline">Lakers: a projeção subestima o novo ala-pivô do time</h2>
+            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/sandro-mamukelashvili/mamukelashvili-projecao-papel-banco-lakers/">
+
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="">
+                            </div>
+
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="Renato Campos">
+                <meta itemprop="url" content="https://lakersbrasil.com/author/renato-campos/">
+            </div>
+        </div>
+    </a>
+</div>
+                                                                                                                <div class="col">
+
+    <a href="https://lakersbrasil.com/luka-doncic/doncic-video-zoando-austin-reaves/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
+        <meta itemprop="position" content="4">
 
                     <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="image" content="https://lakersbrasil.com/thumbor/DNxAk45NyXwwS2PCpQ53uImlN7E=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Faustin-reaves-provocacao-doncic-video-lakers.jpg">
@@ -1865,86 +2038,6 @@ footer.footer > .mt-sm-4{
         <div class="card-body py-2">
             <h2 class="card-title h3 m-0" itemprop="headline">Doncic zoou o Reaves no perfil oficial do Lakers</h2>
             <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/luka-doncic/doncic-video-zoando-austin-reaves/">
-
-            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-                <meta itemprop="name" content="">
-                            </div>
-
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <meta itemprop="name" content="Renato Campos">
-                <meta itemprop="url" content="https://lakersbrasil.com/author/renato-campos/">
-            </div>
-        </div>
-    </a>
-</div>
-                                                                                                                <div class="col">
-
-    <a href="https://lakersbrasil.com/luka-doncic/o-que-mudou-no-lakers-depois-do-minicamp-esloveno/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
-        <meta itemprop="position" content="3">
-
-                    <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <meta itemprop="image" content="https://lakersbrasil.com/thumbor/Q1zqrM3yI3zpxqqdFqvKN1Q4ox0=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg">
-                <meta itemprop="width" content="1200">
-                <meta itemprop="height" content="541">
-                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" sizes="(max-width: 576px) 300px,
-                        (max-width: 768px) 480px,
-                        (max-width: 992px) 590px,
-                        (max-width: 1200px) 768px,
-                        1024px" class="card-img-top lazy" alt="O que mudou no Lakers depois do minicamp esloveno" fetchpriority="high" decoding="async" data-src="https://lakersbrasil.com/thumbor/Uyv0OX6hSmIAT-L6b32S01alFjg=/100x45/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg" data-srcset="
-                        https://lakersbrasil.com/thumbor/nqICbCpUzwiAvLCjRl0cqI2PXuw=/300x135/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 300w,
-                        https://lakersbrasil.com/thumbor/4ptBBPAUnht32oj2ZPihukfgHxE=/390x176/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 390w,
-                        https://lakersbrasil.com/thumbor/9p4VlGNOyM4fTrM9VXSlW9Hb3Pc=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 480w,
-                        https://lakersbrasil.com/thumbor/pCVVFJ5ObXmLhyDX37aZeRxLgmY=/590x266/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 590w,
-                        https://lakersbrasil.com/thumbor/pVfFaanSeL7Y__JfxPdbDEUkLDA=/768x347/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 768w,
-                        https://lakersbrasil.com/thumbor/4ckAco_QEEdqrfWpjy68bCuYFlA=/1024x462/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 1024w,
-                        https://lakersbrasil.com/thumbor/Q1zqrM3yI3zpxqqdFqvKN1Q4ox0=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 1200w,
-                        https://lakersbrasil.com/thumbor/vLR6i1d515vQd0TyCmLZ6KrU7Kw=/1536x693/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 1536w,
-                        https://lakersbrasil.com/thumbor/uczc8dTqIq00hZsu6YkPEpRMGOA=/2048x924/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 2048w">
-            </div>
-        
-        <div class="card-body py-2">
-            <h2 class="card-title h3 m-0" itemprop="headline">O que mudou no Lakers depois do minicamp esloveno</h2>
-            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/luka-doncic/o-que-mudou-no-lakers-depois-do-minicamp-esloveno/">
-
-            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-                <meta itemprop="name" content="">
-                            </div>
-
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <meta itemprop="name" content="Paola Zanon">
-                <meta itemprop="url" content="https://lakersbrasil.com/author/paolazanon1201gmail-com/">
-            </div>
-        </div>
-    </a>
-</div>
-                                                                                                                <div class="col">
-
-    <a href="https://lakersbrasil.com/cameron-carr/carr-e-a-seca-de-escolhas-de-primeira-rodada/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
-        <meta itemprop="position" content="4">
-
-                    <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <meta itemprop="image" content="https://lakersbrasil.com/thumbor/2McN6UBbzdj-z1Vcu3wBbFAJJN8=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg">
-                <meta itemprop="width" content="1200">
-                <meta itemprop="height" content="541">
-                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" sizes="(max-width: 576px) 300px,
-                        (max-width: 768px) 480px,
-                        (max-width: 992px) 590px,
-                        (max-width: 1200px) 768px,
-                        1024px" class="card-img-top lazy" alt="Cameron Carr herda uma seca de quase uma década" fetchpriority="high" decoding="async" data-src="https://lakersbrasil.com/thumbor/EPMAhDz23WCdN0srHHjPg86F_Ow=/100x45/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg" data-srcset="
-                        https://lakersbrasil.com/thumbor/-MbPleYBvHVSKeYJXMAvWTiZ1T8=/300x135/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 300w,
-                        https://lakersbrasil.com/thumbor/Y2MSEj6O1VMRwwTkK-wxp3oEGjs=/390x176/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 390w,
-                        https://lakersbrasil.com/thumbor/WALPdDFYaQ4qNXIC5_bVKF6XcHI=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 480w,
-                        https://lakersbrasil.com/thumbor/mBviCDRZZj6-8uxcKD2at2n1gyo=/590x266/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 590w,
-                        https://lakersbrasil.com/thumbor/jkYP2I0pFe4QjqfRIHK-hSde5f8=/768x347/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 768w,
-                        https://lakersbrasil.com/thumbor/wJX-Z1Kg9Gg8oNp1BOPDupLQ9ZY=/1024x462/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 1024w,
-                        https://lakersbrasil.com/thumbor/2McN6UBbzdj-z1Vcu3wBbFAJJN8=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 1200w,
-                        https://lakersbrasil.com/thumbor/B6zw7vQ0tQLT35vijop2xDfZhgc=/1536x693/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 1536w,
-                        https://lakersbrasil.com/thumbor/bVscOvrc5s3TY5qIVxhP7l4TKyM=/2048x924/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F07%2Fcameron-carr-lakers-bulls-summer-league-16-07.jpg 2048w">
-            </div>
-        
-        <div class="card-body py-2">
-            <h2 class="card-title h3 m-0" itemprop="headline">Cameron Carr herda uma seca de quase uma década</h2>
-            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/cameron-carr/carr-e-a-seca-de-escolhas-de-primeira-rodada/">
 
             <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                 <meta itemprop="name" content="">
@@ -2047,131 +2140,7 @@ footer.footer > .mt-sm-4{
 
 
     
-        
-<div class="row g-5" id="lbr-bloco-elenco">
-  <div class="section-title d-flex"><p>Elenco 2026-27</p></div>
-  <div class="col-md-12 lbr-elenco-wrap">
-    <div class="lbr-elenco">
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/adou-thiero/">
-        <span class="lbr-el-num">1</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Adou Thiero</span>
-          <span class="lbr-el-pos">Ala</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jarred-vanderbilt/">
-        <span class="lbr-el-num">2</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Jarred Vanderbilt</span>
-          <span class="lbr-el-pos">Ala-pivô</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/dalton-knecht/">
-        <span class="lbr-el-num">4</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Dalton Knecht</span>
-          <span class="lbr-el-pos">Ala</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/quentin-grimes/">
-        <span class="lbr-el-num">5</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Quentin Grimes</span>
-          <span class="lbr-el-pos">Ala-armador</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jaden-hardy/">
-        <span class="lbr-el-num">7</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Jaden Hardy</span>
-          <span class="lbr-el-pos">Ala-armador</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/bronny-james/">
-        <span class="lbr-el-num">9</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Bronny James</span>
-          <span class="lbr-el-pos">Armador</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/collin-sexton/">
-        <span class="lbr-el-num">10</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Collin Sexton</span>
-          <span class="lbr-el-pos">Armador</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/ziaire-williams/">
-        <span class="lbr-el-num">11</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Ziaire Williams</span>
-          <span class="lbr-el-pos">Ala</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jake-laravia/">
-        <span class="lbr-el-num">12</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Jake LaRavia</span>
-          <span class="lbr-el-pos">Ala</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/walker-kessler/">
-        <span class="lbr-el-num">14</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Walker Kessler</span>
-          <span class="lbr-el-pos">Pivô</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/austin-reaves/">
-        <span class="lbr-el-num">15</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Austin Reaves</span>
-          <span class="lbr-el-pos">Ala-armador</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/matisse-thybulle/">
-        <span class="lbr-el-num">26</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Matisse Thybulle</span>
-          <span class="lbr-el-pos">Ala</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/cameron-carr/">
-        <span class="lbr-el-num">43</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Cameron Carr</span>
-          <span class="lbr-el-pos">Ala-armador</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/sandro-mamukelashvili/">
-        <span class="lbr-el-num">54</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Sandro Mamukelashvili</span>
-          <span class="lbr-el-pos">Ala-pivô</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/kevon-looney/">
-        <span class="lbr-el-num">55</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Kevon Looney</span>
-          <span class="lbr-el-pos">Pivô</span>
-        </span>
-      </a>
-      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/luka-doncic/">
-        <span class="lbr-el-num">77</span>
-        <span class="lbr-el-txt">
-          <span class="lbr-el-nome">Luka Doncic</span>
-          <span class="lbr-el-pos">Armador</span>
-        </span>
-      </a>
-    </div>
-  </div>
-  <div class="section-title d-flex">
-    <p><a href="https://lakersbrasil.com/elenco-lakers/" class="btn-stroke">Ver o elenco completo</a></p>
-  </div>
-</div>
-
-<div class="row g-5">
+        <div class="row g-5">
 
             <div class="section-title d-flex justify-content-center">
                 <p>Negociações</p>
@@ -2763,8 +2732,52 @@ footer.footer > .mt-sm-4{
                     
                     <div class="col">
 
-    <a href="https://lakersbrasil.com/luka-doncic/thunder-quer-evitar-o-modelo-doncic/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
+    <a href="https://lakersbrasil.com/luka-doncic/o-que-mudou-no-lakers-depois-do-minicamp-esloveno/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
         <meta itemprop="position" content="1">
+
+                    <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="image" content="https://lakersbrasil.com/thumbor/Q1zqrM3yI3zpxqqdFqvKN1Q4ox0=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg">
+                <meta itemprop="width" content="1200">
+                <meta itemprop="height" content="541">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" sizes="(max-width: 576px) 300px,
+                        (max-width: 768px) 480px,
+                        (max-width: 992px) 590px,
+                        (max-width: 1200px) 768px,
+                        1024px" class="card-img-top lazy" alt="O que mudou no Lakers depois do minicamp esloveno" fetchpriority="high" decoding="async" data-src="https://lakersbrasil.com/thumbor/Uyv0OX6hSmIAT-L6b32S01alFjg=/100x45/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg" data-srcset="
+                        https://lakersbrasil.com/thumbor/nqICbCpUzwiAvLCjRl0cqI2PXuw=/300x135/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 300w,
+                        https://lakersbrasil.com/thumbor/4ptBBPAUnht32oj2ZPihukfgHxE=/390x176/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 390w,
+                        https://lakersbrasil.com/thumbor/9p4VlGNOyM4fTrM9VXSlW9Hb3Pc=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 480w,
+                        https://lakersbrasil.com/thumbor/pCVVFJ5ObXmLhyDX37aZeRxLgmY=/590x266/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 590w,
+                        https://lakersbrasil.com/thumbor/pVfFaanSeL7Y__JfxPdbDEUkLDA=/768x347/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 768w,
+                        https://lakersbrasil.com/thumbor/4ckAco_QEEdqrfWpjy68bCuYFlA=/1024x462/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 1024w,
+                        https://lakersbrasil.com/thumbor/Q1zqrM3yI3zpxqqdFqvKN1Q4ox0=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 1200w,
+                        https://lakersbrasil.com/thumbor/vLR6i1d515vQd0TyCmLZ6KrU7Kw=/1536x693/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 1536w,
+                        https://lakersbrasil.com/thumbor/uczc8dTqIq00hZsu6YkPEpRMGOA=/2048x924/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-mini-camp-04-09.jpg 2048w">
+            </div>
+        
+        <div class="card-body py-2">
+            <h2 class="card-title h3 m-0" itemprop="headline">O que mudou no Lakers depois do minicamp esloveno</h2>
+            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/luka-doncic/o-que-mudou-no-lakers-depois-do-minicamp-esloveno/">
+
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="">
+                            </div>
+
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="Paola Zanon">
+                <meta itemprop="url" content="https://lakersbrasil.com/author/paolazanon1201gmail-com/">
+            </div>
+        </div>
+    </a>
+</div>
+
+                    
+                
+                    
+                    <div class="col">
+
+    <a href="https://lakersbrasil.com/luka-doncic/thunder-quer-evitar-o-modelo-doncic/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
+        <meta itemprop="position" content="2">
 
                     <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="image" content="https://lakersbrasil.com/thumbor/lvzAs9tKNFgvqo5bRLmRmP-5Vcw=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F08%2Fluka-doncic-projecao-oeste-2026-27-capa.jpg">
@@ -2802,13 +2815,15 @@ footer.footer > .mt-sm-4{
     </a>
 </div>
 
+                                            </div>
                     
                 
+                                            <div class="row row-cols-1 row-cols-md-2 g-3">
                     
                     <div class="col">
 
     <a href="https://lakersbrasil.com/luka-doncic/dirk-nowitzki-elogia-transformacao-de-luka-doncic/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
-        <meta itemprop="position" content="2">
+        <meta itemprop="position" content="3">
 
                     <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="image" content="https://lakersbrasil.com/thumbor/pzPD08Ep1r9ymhwXMx1Z3NxMO40=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F08%2Fluka-doncic-treino-arremesso-observador-eslovenia.jpg">
@@ -2846,15 +2861,13 @@ footer.footer > .mt-sm-4{
     </a>
 </div>
 
-                                            </div>
                     
                 
-                                            <div class="row row-cols-1 row-cols-md-2 g-3">
                     
                     <div class="col">
 
     <a href="https://lakersbrasil.com/luka-doncic/kevon-looney-se-surpreende-com-doncic-antes-mesmo-da-estreia-no-lakers/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
-        <meta itemprop="position" content="3">
+        <meta itemprop="position" content="4">
 
                     <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="image" content="https://lakersbrasil.com/thumbor/n9UexqzXomo_U4rGf4T2KsuHEUA=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fkevon-looney-surpreso-doncic-04-09.jpg">
@@ -2892,13 +2905,15 @@ footer.footer > .mt-sm-4{
     </a>
 </div>
 
+                                            </div>
                     
                 
+                                            <div class="row row-cols-1 row-cols-md-2 g-3">
                     
                     <div class="col">
 
     <a href="https://lakersbrasil.com/luka-doncic/doncic-taxa-de-uso-recorde-titulo-nba/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
-        <meta itemprop="position" content="4">
+        <meta itemprop="position" content="5">
 
                     <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="image" content="https://lakersbrasil.com/thumbor/usB7V1-Hd7Szmi4rA2PPzQOedHI=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F08%2Fluka-doncic-olhar-placar-temporada-lakers.jpg">
@@ -2936,15 +2951,13 @@ footer.footer > .mt-sm-4{
     </a>
 </div>
 
-                                            </div>
                     
                 
-                                            <div class="row row-cols-1 row-cols-md-2 g-3">
                     
                     <div class="col">
 
     <a href="https://lakersbrasil.com/luka-doncic/luka-doncic-aponta-o-maior-problema-do-lakers-nos-playoffs-2026/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
-        <meta itemprop="position" content="5">
+        <meta itemprop="position" content="6">
 
                     <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="image" content="https://lakersbrasil.com/thumbor/3FmDlMuZqGjJMwOThazTo-W2Yp8=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F09%2Fluka-doncic-problema-lakers-01-09.jpg">
@@ -2982,50 +2995,6 @@ footer.footer > .mt-sm-4{
     </a>
 </div>
 
-                    
-                
-                    
-                    <div class="col">
-
-    <a href="https://lakersbrasil.com/luka-doncic/doncic-programa-fisico-lesao-coxa-2026-27/" class="custom-tease-post card h-100 position-relative text-decoration-none" itemscope itemtype="https://schema.org/NewsArticle" itemprop="itemListElement">
-        <meta itemprop="position" content="6">
-
-                    <div class="ratio ratio-16x9" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <meta itemprop="image" content="https://lakersbrasil.com/thumbor/YHruC_MYq9ov3lfNLl105qyQ2q4=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg">
-                <meta itemprop="width" content="1200">
-                <meta itemprop="height" content="541">
-                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" sizes="(max-width: 576px) 300px,
-                        (max-width: 768px) 480px,
-                        (max-width: 992px) 590px,
-                        (max-width: 1200px) 768px,
-                        1024px" class="card-img-top lazy" alt="O Lakers inteiro depende da coxa esquerda de Doncic" fetchpriority="high" decoding="async" data-src="https://lakersbrasil.com/thumbor/IZqlBLsqmTaoRXvUKqdPOaXFslg=/100x45/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg" data-srcset="
-                        https://lakersbrasil.com/thumbor/vJUoy7RdQU77pMmdWjqlkHXHkfI=/300x135/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 300w,
-                        https://lakersbrasil.com/thumbor/SKwnpIfPkQyw23btf6ZuLnjiqf8=/390x176/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 390w,
-                        https://lakersbrasil.com/thumbor/TKNw6UQlfdGSgLqckkSkmOvKr2Y=/480x217/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 480w,
-                        https://lakersbrasil.com/thumbor/dfx8Z_rmt8zOemg-ESllSx4LMYY=/590x266/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 590w,
-                        https://lakersbrasil.com/thumbor/dAxoDHEKxvd7eK3ELw5FhOgCiZA=/768x347/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 768w,
-                        https://lakersbrasil.com/thumbor/JaZiQNIENq6R3zyLfXbYjIoQ82g=/1024x462/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 1024w,
-                        https://lakersbrasil.com/thumbor/YHruC_MYq9ov3lfNLl105qyQ2q4=/1200x541/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 1200w,
-                        https://lakersbrasil.com/thumbor/5e8gxWm5gGW9j8I3HoU3bKXqypg=/1536x693/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 1536w,
-                        https://lakersbrasil.com/thumbor/3xu4zEYoS3ydELCc0u2lcoZNGQ4=/2048x924/smart/filters:format(webp)/https%3A%2F%2Fmedia.lakersbrasil.com%2Fmain%2F2026%2F04%2Fluka-doncic-treino-lakers-21-04.jpg 2048w">
-            </div>
-        
-        <div class="card-body py-2">
-            <h2 class="card-title h3 m-0" itemprop="headline">O Lakers inteiro depende da coxa esquerda de Doncic</h2>
-            <meta itemprop="mainEntityOfPage" content="https://lakersbrasil.com/luka-doncic/doncic-programa-fisico-lesao-coxa-2026-27/">
-
-            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-                <meta itemprop="name" content="">
-                            </div>
-
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <meta itemprop="name" content="Renato Campos">
-                <meta itemprop="url" content="https://lakersbrasil.com/author/renato-campos/">
-            </div>
-        </div>
-    </a>
-</div>
-
                                             </div>
                     
                             </div>
@@ -3044,7 +3013,200 @@ footer.footer > .mt-sm-4{
                 
 
 
-					</main>
+					
+<div class="row g-5" id="lbr-bloco-stats">
+  <div class="section-title d-flex"><p>Médias da temporada</p></div>
+  <div class="col-md-12 lbr-stats-wrap">
+    <p class="lbr-st-aviso">A temporada 2026-27 começa em 21 de outubro. Os números passam a contar a partir da estreia.</p>
+    <div class="lbr-stats">
+        <a class="lbr-st-card" href="https://lakersbrasil.com/elenco-lakers/luka-doncic/">
+          <span class="lbr-st-foto"><img src="https://lakersbrasil.com/app/uploads/2026/08/elenco-lakers-2026-27-luka-doncic.webp" alt="Luka Doncic" loading="lazy" width="120" height="120"></span>
+          <span class="lbr-st-nome">Luka Doncic</span>
+          <span class="lbr-st-pos">#77 &middot; Armador</span>
+          <span class="lbr-st-linha">
+            <span><b>0,0</b>PTS</span>
+            <span><b>0,0</b>REB</span>
+            <span><b>0,0</b>AST</span>
+          </span>
+        </a>
+        <a class="lbr-st-card" href="https://lakersbrasil.com/elenco-lakers/austin-reaves/">
+          <span class="lbr-st-foto"><img src="https://lakersbrasil.com/app/uploads/2026/08/elenco-lakers-2026-27-austin-reaves.webp" alt="Austin Reaves" loading="lazy" width="120" height="120"></span>
+          <span class="lbr-st-nome">Austin Reaves</span>
+          <span class="lbr-st-pos">#15 &middot; Ala-armador</span>
+          <span class="lbr-st-linha">
+            <span><b>0,0</b>PTS</span>
+            <span><b>0,0</b>REB</span>
+            <span><b>0,0</b>AST</span>
+          </span>
+        </a>
+        <a class="lbr-st-card" href="https://lakersbrasil.com/elenco-lakers/walker-kessler/">
+          <span class="lbr-st-foto"><img src="https://lakersbrasil.com/app/uploads/2026/08/elenco-lakers-2026-27-walker-kessler.webp" alt="Walker Kessler" loading="lazy" width="120" height="120"></span>
+          <span class="lbr-st-nome">Walker Kessler</span>
+          <span class="lbr-st-pos">#14 &middot; Pivô</span>
+          <span class="lbr-st-linha">
+            <span><b>0,0</b>PTS</span>
+            <span><b>0,0</b>REB</span>
+            <span><b>0,0</b>AST</span>
+          </span>
+        </a>
+        <a class="lbr-st-card" href="https://lakersbrasil.com/elenco-lakers/quentin-grimes/">
+          <span class="lbr-st-foto"><img src="https://lakersbrasil.com/app/uploads/2026/08/elenco-lakers-2026-27-quentin-grimes.webp" alt="Quentin Grimes" loading="lazy" width="120" height="120"></span>
+          <span class="lbr-st-nome">Quentin Grimes</span>
+          <span class="lbr-st-pos">#5 &middot; Ala-armador</span>
+          <span class="lbr-st-linha">
+            <span><b>0,0</b>PTS</span>
+            <span><b>0,0</b>REB</span>
+            <span><b>0,0</b>AST</span>
+          </span>
+        </a>
+        <a class="lbr-st-card" href="https://lakersbrasil.com/elenco-lakers/sandro-mamukelashvili/">
+          <span class="lbr-st-foto"><img src="https://lakersbrasil.com/app/uploads/2026/08/elenco-lakers-2026-27-sandro-mamukelashvili.webp" alt="Sandro Mamukelashvili" loading="lazy" width="120" height="120"></span>
+          <span class="lbr-st-nome">Sandro Mamukelashvili</span>
+          <span class="lbr-st-pos">#54 &middot; Ala-pivô</span>
+          <span class="lbr-st-linha">
+            <span><b>0,0</b>PTS</span>
+            <span><b>0,0</b>REB</span>
+            <span><b>0,0</b>AST</span>
+          </span>
+        </a>
+        <a class="lbr-st-card" href="https://lakersbrasil.com/elenco-lakers/jarred-vanderbilt/">
+          <span class="lbr-st-foto"><img src="https://lakersbrasil.com/app/uploads/2026/08/elenco-lakers-2026-27-jarred-vanderbilt.webp" alt="Jarred Vanderbilt" loading="lazy" width="120" height="120"></span>
+          <span class="lbr-st-nome">Jarred Vanderbilt</span>
+          <span class="lbr-st-pos">#2 &middot; Ala-pivô</span>
+          <span class="lbr-st-linha">
+            <span><b>0,0</b>PTS</span>
+            <span><b>0,0</b>REB</span>
+            <span><b>0,0</b>AST</span>
+          </span>
+        </a>
+    </div>
+  </div>
+</div>
+
+<div class="row g-5" id="lbr-bloco-elenco">
+  <div class="section-title d-flex"><p>Elenco 2026-27</p></div>
+  <div class="col-md-12 lbr-elenco-wrap">
+    <div class="lbr-elenco">
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/adou-thiero/">
+        <span class="lbr-el-num">1</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Adou Thiero</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jarred-vanderbilt/">
+        <span class="lbr-el-num">2</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Jarred Vanderbilt</span>
+          <span class="lbr-el-pos">Ala-pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/dalton-knecht/">
+        <span class="lbr-el-num">4</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Dalton Knecht</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/quentin-grimes/">
+        <span class="lbr-el-num">5</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Quentin Grimes</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jaden-hardy/">
+        <span class="lbr-el-num">7</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Jaden Hardy</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/bronny-james/">
+        <span class="lbr-el-num">9</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Bronny James</span>
+          <span class="lbr-el-pos">Armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/collin-sexton/">
+        <span class="lbr-el-num">10</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Collin Sexton</span>
+          <span class="lbr-el-pos">Armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/ziaire-williams/">
+        <span class="lbr-el-num">11</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Ziaire Williams</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jake-laravia/">
+        <span class="lbr-el-num">12</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Jake LaRavia</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/walker-kessler/">
+        <span class="lbr-el-num">14</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Walker Kessler</span>
+          <span class="lbr-el-pos">Pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/austin-reaves/">
+        <span class="lbr-el-num">15</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Austin Reaves</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/matisse-thybulle/">
+        <span class="lbr-el-num">26</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Matisse Thybulle</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/cameron-carr/">
+        <span class="lbr-el-num">43</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Cameron Carr</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/sandro-mamukelashvili/">
+        <span class="lbr-el-num">54</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Sandro Mamukelashvili</span>
+          <span class="lbr-el-pos">Ala-pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/kevon-looney/">
+        <span class="lbr-el-num">55</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Kevon Looney</span>
+          <span class="lbr-el-pos">Pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/luka-doncic/">
+        <span class="lbr-el-num">77</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Luka Doncic</span>
+          <span class="lbr-el-pos">Armador</span>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="section-title d-flex">
+    <p><a href="https://lakersbrasil.com/elenco-lakers/" class="btn-stroke">Ver o elenco completo</a></p>
+  </div>
+</div>
+
+</main>
 
 					<footer class="py-3 mt-4 footer">
 	<div class="container">
