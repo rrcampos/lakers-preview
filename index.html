@@ -71,9 +71,7 @@ blockquote.tiktok-embed { min-height: 750px; }
     <link rel="https://api.w.org/" href="https://lakersbrasil.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://lakersbrasil.com/wp-json/wp/v2/pages/26730"><script>const nsn_pf ="nsn" </script>
 <link rel="alternate" type="application/rss+xml" title="Lakers Brasil: Notícias, artigos, rumores e vídeos do Los Angeles Lakers. RSS Feed" href="https://lakersbrasil.com/feed/">
 		<style type="text/css" id="wp-custom-css">
-			/* ===== CSS original do campo, preservado ===== */
-/* ===== CSS que ja estava no campo, preservado ===== */
-.bg-purple{background:#401287 !important;}
+			.bg-purple{background:#401287 !important;}
 
 p{line-height:2rem; margin-bottom:2rem;}
 
@@ -120,1478 +118,6 @@ h2{color:#3b1d58; font-weight: bold;}
 .ratio-16x9 {--bs-aspect-ratio:40.25% !important;}
 
 .bg-body-secondary{--bs-aspect-ratio:55.25% !important;}
-
-
-
-/* ==========================================================================
-   LAKERS BRASIL - v2
-   Cole ISTO em Aparencia &gt; Personalizar &gt; CSS adicional (post 66184), DEPOIS
-   do que ja esta la e nao no lugar: as regras antigas de .bg-purple, p e
-   .entry-title ainda servem outras paginas.
-   As fontes entram como @font-face apontando direto para o .woff2, sem
-   @import: o WordPress escapa o E comercial da URL do Google e a familia
-   seguinte deixava de carregar. Ver ferramentas/montar-fontes.mjs.
-   Escopo: topo e rodape valem para o site inteiro. O miolo da home fica preso
-   em .custom-home-style e o da materia em .custom-single-post-style.
-   ========================================================================== */
-
-/* ===== home-novo.css ===== */
-/* ==========================================================================
-   LAKERS BRASIL - home v2
-   So aparencia, nenhuma mudanca de estrutura. Tudo escopado em
-   .custom-home-style para nao vazar para artigo, categoria ou pagina.
-   Rota de aplicacao no ar: Personalizar &gt; CSS adicional (post 66184).
-   ========================================================================== */
-
-.custom-home-style{
-  --lbr-roxo:#401287;
-  --lbr-roxo-claro:#6d28d9;
-  --lbr-ouro:#f9a01b;
-  --lbr-tinta:#16121f;
-  --lbr-cinza:#6b6577;
-  --lbr-linha:#e7e3ee;
-}
-
-/* --------------------------------------------------------------- 1. MANCHETE
-   O bloco roxo chapado vira veu em degrade: a foto respira embaixo do texto
-   em vez de ser tapada por um retangulo. A tarja fica so como acento. */
-.custom-home-style .card-top-sm{
-  border:0 !important;
-  border-radius:14px !important;
-  overflow:hidden !important;
-  box-shadow:0 10px 30px rgba(22,18,31,.14);
-}
-.custom-home-style .card-top-sm .ratio{border-radius:14px;overflow:hidden}
-.custom-home-style .card-top-sm .card-img-overlay{
-  position:absolute !important;
-  inset:auto 0 0 0 !important;
-  padding:54px 30px 26px !important;
-  background:linear-gradient(to top,
-    rgba(16,6,36,.94) 0%,
-    rgba(16,6,36,.78) 38%,
-    rgba(16,6,36,.28) 72%,
-    rgba(16,6,36,0) 100%) !important;
-}
-.custom-home-style .card-top-sm .card-title{
-  background:transparent !important;
-  padding:0 0 0 18px !important;
-  border-left:5px solid var(--lbr-ouro);
-  font-size:clamp(1.28rem,.95rem + 1.35vw,2.05rem) !important;
-  line-height:1.16 !important;
-  letter-spacing:-.01em;
-  text-shadow:0 2px 18px rgba(0,0,0,.55);
-}
-@media (max-width:575.98px){
-  .custom-home-style .card-top-sm .card-img-overlay{padding:56px 18px 18px !important}
-  .custom-home-style .card-top-sm .card-title{padding-left:12px !important;border-left-width:4px}
-}
-
-/* ------------------------------------------------------------------ 2. CARDS
-   Ganham moldura, respiro e reacao ao toque. A manchete sai do roxo puro
-   para tinta escura: contraste melhor e o roxo passa a significar hover. */
-.custom-home-style .custom-tease-post{
-  border:1px solid var(--lbr-linha) !important;
-  border-radius:12px !important;
-  overflow:hidden !important;
-  background:#fff;
-  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-}
-.custom-home-style .custom-tease-post .ratio{overflow:hidden}
-.custom-home-style .custom-tease-post .ratio img{
-  transition:transform .5s cubic-bezier(.2,.7,.3,1);
-  border-bottom:0 !important;
-}
-.custom-home-style .custom-tease-post .card-body{padding:14px 16px 18px !important}
-.custom-home-style .custom-tease-post .card-title{
-  color:var(--lbr-tinta) !important;
-  font-size:1.06rem !important;
-  line-height:1.34 !important;
-  letter-spacing:-.005em;
-  transition:color .2s ease;
-}
-@media (hover:hover){
-  .custom-home-style .custom-tease-post:hover{
-    transform:translateY(-4px);
-    border-color:#d6cee6 !important;
-    box-shadow:0 14px 28px rgba(22,18,31,.13);
-  }
-  .custom-home-style .custom-tease-post:hover .ratio img{transform:scale(1.05)}
-  .custom-home-style .custom-tease-post:hover .card-title{color:var(--lbr-roxo) !important}
-  .custom-home-style .card-top-sm:hover{box-shadow:0 16px 40px rgba(22,18,31,.22)}
-}
-
-/* Assinatura do card. O nome do autor ja existe no markup, dentro de um
-   , invisivel. Aqui ele volta a aparecer, discreto,
-   sem tocar no HTML. */
-.custom-home-style .custom-tease-post [itemprop="author"]{display:block}
-.custom-home-style .custom-tease-post [itemprop="author"] [itemprop="name"]{
-  display:block;
-  margin-top:9px;
-  font-size:.72rem;
-  font-weight:600;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-  color:var(--lbr-cinza);
-}
-.custom-home-style .custom-tease-post [itemprop="author"] [itemprop="name"]::before{content:attr(content)}
-.custom-home-style .custom-tease-post [itemprop="author"] [itemprop="url"]{display:none}
-
-/* ------------------------------------------------------- 3. TITULO DE SECAO
-   Era um rotulo solto no meio da pagina, com um traco curto por cima.
-   Vira uma regua de largura inteira com o nome encostado a esquerda. */
-.custom-home-style .section-title{
-  justify-content:flex-start !important;
-  align-items:center;
-  gap:16px;
-  width:100%;
-  margin-top:8px;
-}
-.custom-home-style .section-title::after{
-  content:"";
-  flex:1 1 auto;
-  height:1px;
-  background:var(--lbr-linha);
-}
-.custom-home-style .section-title p{
-  border-top:0 !important;
-  margin:0 !important;
-  font-size:.95rem !important;
-  letter-spacing:.14em;
-  color:var(--lbr-roxo);
-  position:relative;
-  padding:0 0 0 14px !important;
-}
-.custom-home-style .section-title p::before{
-  content:"";
-  position:absolute;left:0;top:50%;transform:translateY(-50%);
-  width:5px;height:18px;border-radius:3px;background:var(--lbr-ouro);
-}
-
-/* -------------------------------------------------------------- 4. RITMO
-   As faixas usavam g-5 em umas e mt-4/mt-md-5 em outras, entao o espaco
-   entre blocos variava. Uma medida so. */
-.custom-home-style &gt; .row.g-5{--bs-gutter-y:0;margin-top:0}
-.custom-home-style &gt; .row.g-5 + .row.g-5{margin-top:46px}
-.custom-home-style .col-md-12.mt-md-5{margin-top:22px !important}
-.custom-home-style .row.row-cols-1 + .row.row-cols-1{margin-top:1rem}
-@media (min-width:768px){
-  .custom-home-style &gt; .row.g-5 + .row.g-5{margin-top:62px}
-}
-
-/* ------------------------------------------------------------- 5. PLACAR
-   Problemas do bloco atual: os dois titulos de coluna nao alinham, sobra um
-   vao morto entre os escudos, o resultado sai em corpo de texto comum e
-   ficava um filete solto embaixo do botao. */
-.custom-home-style .col-md-5 &gt; .h3,
-.custom-home-style .col-md-7 &gt; .h3{
-  text-align:center;
-  font-size:.95rem !important;
-  letter-spacing:.14em;
-  color:var(--lbr-roxo);
-  margin:0 0 14px !important;
-  padding-bottom:10px;
-  border-bottom:2px solid var(--lbr-roxo);
-}
-.custom-home-style .col-md-5 &gt; .row.border-top{
-  border:1px solid var(--lbr-linha) !important;
-  border-radius:12px;
-  background:#faf9fc;
-  padding:20px 16px !important;
-  margin:0 0 14px !important;
-}
-.custom-home-style .col-md-5 &gt; .row.border-top img{
-  width:clamp(64px,23cqw,112px);
-  height:clamp(64px,23cqw,112px);
-  max-width:100%;
-  object-fit:contain;
-  margin:0 auto;
-  display:block;
-}
-.custom-home-style .col-md-5{container-type:inline-size}
-.custom-home-style .col-md-5 &gt; .row.border-top{flex-wrap:nowrap}
-.custom-home-style .col-md-5 &gt; .row.border-top .col-4{flex:0 0 auto;width:auto;max-width:none;min-width:0;padding-left:2px;padding-right:2px}
-.custom-home-style .col-md-5 &gt; .row.border-top .col-4:nth-child(2){flex:1 1 auto;width:auto;max-width:none;white-space:nowrap;
-  font-size:clamp(1.25rem,8cqw,2.35rem);
-  font-weight:700;
-  color:var(--lbr-tinta);
-  font-variant-numeric:tabular-nums;
-  letter-spacing:.02em;
-  line-height:1.1;
-}
-/* o filete orfao embaixo do botao */
-.custom-home-style .col-md-5 &gt; .border-bottom{border-bottom:0 !important;padding-top:0 !important}
-.custom-home-style .col-md-5 &gt; .border-bottom p{margin:0}
-.custom-home-style .col-md-5 .btn-stroke{
-  border:0 !important;
-  background:var(--lbr-roxo) !important;
-  color:#fff !important;
-  border-radius:9px;
-  padding:.72rem 1rem !important;
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  transition:background .2s ease;
-}
-.custom-home-style .col-md-5 .btn-stroke:hover{background:#2d0c63 !important}
-
-/* Tabela de jogos: linhas mais legiveis, numero com largura fixa. */
-.custom-home-style .col-md-7 .border-top{border-top:0 !important}
-.custom-home-style .col-md-7 .row.border-bottom{
-  border-bottom:1px solid var(--lbr-linha) !important;
-  margin-bottom:0 !important;
-  align-items:center;
-  transition:background .15s ease;
-}
-.custom-home-style .col-md-7 .row.border-bottom:hover{background:#faf9fc}
-.custom-home-style .col-md-7 .row.border-bottom .col-6{padding:.62rem .5rem !important}
-.custom-home-style .col-md-7 .row.border-bottom .col-6:first-child{
-  font-weight:700;
-  color:var(--lbr-tinta);
-  letter-spacing:.03em;
-}
-.custom-home-style .col-md-7 .row.border-bottom .col-6.text-end{
-  font-size:.86rem;
-  color:var(--lbr-cinza);
-  font-variant-numeric:tabular-nums;
-}
-
-/* --------------------------------------------------------- 6. FOCO VISIVEL
-   Navegacao por teclado no site nao mostrava onde estava. */
-.custom-home-style a:focus-visible{
-  outline:3px solid var(--lbr-ouro);
-  outline-offset:3px;
-  border-radius:6px;
-}
-
-/* ------------------------------------------------- 7. ALTURA DA MANCHETE
-   Com o veu virando absoluto, a caixa da manchete passou a valer exatamente
-   o --bs-aspect-ratio de 40,25% do tema, e no celular isso virou uma tira
-   de 150px que corta o rosto no queixo. A manchete volta a ter altura de
-   manchete, e o recorte sobe um pouco para preservar cabeca. */
-.custom-home-style .card-top-sm .ratio{--bs-aspect-ratio:44% !important}
-.custom-home-style .card-top-sm .ratio img{
-  object-fit:cover;
-  object-position:center 28%;
-}
-@media (max-width:991.98px){
-  .custom-home-style .card-top-sm .ratio{--bs-aspect-ratio:62% !important}
-}
-@media (max-width:575.98px){
-  .custom-home-style .card-top-sm .ratio{--bs-aspect-ratio:84% !important}
-}
-/* Cards de apoio: mesma logica de recorte, cabeca preservada. */
-.custom-home-style .custom-tease-post .ratio img{
-  object-fit:cover;
-  object-position:center 26%;
-}
-
-/* --------------------------------------------- 8. "VEJA TUDO SOBRE" E RODAPE
-   O tema usa a MESMA classe .section-title em duas coisas diferentes: o rotulo
-   da secao ("Negociacoes") e o botao que fecha a secao ("Veja tudo sobre
-   Luka Doncic"). O tratamento de regua do item 3 vazou para o botao e ele
-   virou um rotulo colado no rodape. Aqui os dois voltam a ser coisas
-   distintas, e o ultimo ganha distancia do rodape. */
-.custom-home-style .section-title:has(a){
-  justify-content:center !important;
-  margin:30px 0 0 !important;
-}
-.custom-home-style .section-title:has(a)::after{content:none}
-.custom-home-style .section-title:has(a) p{padding:0 !important}
-.custom-home-style .section-title:has(a) p::before{content:none}
-.custom-home-style .section-title a.btn-stroke{
-  display:inline-block;
-  border:1.5px solid var(--lbr-roxo) !important;
-  color:var(--lbr-roxo) !important;
-  background:transparent !important;
-  border-radius:999px;
-  padding:.7rem 1.6rem !important;
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  transition:background .2s ease, color .2s ease;
-}
-.custom-home-style .section-title a.btn-stroke:hover{
-  background:var(--lbr-roxo) !important;
-  color:#fff !important;
-}
-/* Ar entre o fim do conteudo e a faixa escura do rodape. */
-.custom-home-style{padding-bottom:56px}
-@media (min-width:768px){
-  .custom-home-style{padding-bottom:80px}
-  .custom-home-style .section-title:has(a){margin-top:38px !important}
-}
-
-/* Celular: com nowrap, escudo de 100px dos dois lados mais o placar em 2,35rem
-   nao cabem em 390 e o escudo do Lakers vazava do card. Aqui os dois encolhem
-   juntos. E as duas colunas do bloco, que no celular viram uma embaixo da
-   outra, ganham separacao: o botao estava encostado no titulo seguinte. */
-@media (max-width:575.98px){
-  .custom-home-style .col-md-5 &gt; .row.border-top{padding:16px 10px !important}
-}
-@media (max-width:767.98px){
-  .custom-home-style .col-md-7{margin-top:34px}
-}
-
-/* ------------------------------------------------- 9. AR ABAIXO DO TOPO
-   O tema abre a home com pt-4, 24px, e com a barra ganhando degrade, filete
-   dourado e sombra a manchete ficou encostada nela. O pt-4 e utilitario do
-   Bootstrap com !important, entao a troca precisa de seletor mais especifico
-   e de !important tambem. */
-main.custom-home-style{padding-top:30px !important}
-@media (max-width:767.98px){
-  main.custom-home-style{padding-top:24px !important}
-}
-
-/* O vao entre a manchete e as tres chamadas era 20px: o mb-3 do markup mais
-   4px de calha da linha. Sobe para casar com o ar abaixo da barra, que e a
-   mesma leitura de espaco. Os dois passam a sair do mesmo numero. */
-.custom-home-style .card-top-sm{margin-bottom:30px !important}
-@media (max-width:767.98px){
-  .custom-home-style .card-top-sm{margin-bottom:24px !important}
-}
-
-/* ------------------------------------------------ 10. ALTURA DAS FOTOS
-   O tema serve as fotos de card em 40,25% de proporcao, ou seja 2,48:1, uma
-   tira larga e baixa. Sobe para 16:9 de verdade. A manchete tem regra propria
-   e nao e afetada.
-   O thumbor entrega o arquivo em 2,217:1, entao uma caixa mais alta corta as
-   laterais no cover. Por isso o recorte fica centrado na horizontal e o
-   object-position so desloca na vertical, preservando cabeca. */
-.custom-home-style .custom-tease-post .ratio{--bs-aspect-ratio:56.25% !important}
-
-/* ===== tipo-a.css ===== */
-/* ==========================================================================
-   FONTES
-   Nao usar @import aqui. O WordPress escapa o E comercial como entidade HTML no CSS do
-   Personalizar, e dentro de style a entidade nao e decodificada: a URL do
-   Google chegava quebrada e so a primeira familia carregava. Estas regras de
-   fonte apontam direto para o .woff2 e nao tem separador de parametro.
-   Gerado por ferramentas/montar-fontes.mjs.
-   ========================================================================== */
-
-/* Archivo latin-ext */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* Archivo latin */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Archivo latin-ext */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* Archivo latin */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Archivo latin-ext */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* Archivo latin */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Archivo latin-ext */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 800;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* Archivo latin */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 800;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* IBM Plex Sans latin-ext */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* IBM Plex Sans latin */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* IBM Plex Sans latin-ext */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* IBM Plex Sans latin */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* IBM Plex Sans latin-ext */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* IBM Plex Sans latin */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* IBM Plex Sans latin-ext */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* IBM Plex Sans latin */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* ==========================================================================
-   TIPOGRAFIA A - leitura do Silver Screen and Roll
-   Eles usam Druk Text Wide nas manchetes, que e fonte paga da Commercial Type,
-   e IBM Plex Sans no texto. O IBM Plex e livre (OFL) e entra igual. No lugar
-   do Druk vai Archivo 800, o grotesco livre mais proximo daquele peso.
-   ========================================================================== */
-
-body, .custom-home-style, .custom-home-style p, .footer, header{
-  font-family:'IBM Plex Sans','Open Sans',Arial,sans-serif !important;
-}
-
-/* Manchetes: peso alto, entrelinha curta, leve aperto de letra. E o que da a
-   pancada visual do SSR, mais do que o desenho da fonte em si. */
-.custom-home-style .card-title,
-.custom-home-style .card-top-sm .card-title,
-.custom-home-style .custom-tease-post .card-title,
-header h1, .footer h2, .footer h3{
-  font-family:'Archivo','Arial Black',Arial,sans-serif !important;
-  font-weight:800 !important;
-  letter-spacing:-.018em !important;
-}
-.custom-home-style .card-top-sm .card-title{
-  line-height:1.08 !important;
-  letter-spacing:-.024em !important;
-}
-.custom-home-style .custom-tease-post .card-title{
-  line-height:1.24 !important;
-  font-size:1.09rem !important;
-}
-
-/* Rotulos: caixa alta, espacado, peso medio. */
-.custom-home-style .section-title p,
-.custom-home-style .col-md-5 &gt; .h3,
-.custom-home-style .col-md-7 &gt; .h3,
-.custom-home-style .section-title a.btn-stroke,
-.custom-home-style .col-md-5 .btn-stroke,
-.custom-home-style .custom-tease-post [itemprop="author"] [itemprop="name"]{
-  font-family:'Archivo',Arial,sans-serif !important;
-  font-weight:700 !important;
-}
-
-/* Numeros do placar e da tabela de jogos com largura fixa. */
-.custom-home-style .col-md-5 &gt; .row.border-top .col-4:nth-child(2),
-.custom-home-style .col-md-7 .row.border-bottom .col-6{
-  font-family:'Archivo',Arial,sans-serif !important;
-  font-variant-numeric:tabular-nums;
-}
-.custom-home-style .col-md-5 &gt; .row.border-top .col-4:nth-child(2){
-  font-weight:800 !important;
-  letter-spacing:-.01em;
-}
-
-/* ===== caixa-mista.css ===== */
-/* ==========================================================================
-   MANCHETE EM CAIXA MISTA
-   O `text-uppercase` vem do markup do tema, entao a troca e por CSS mesmo.
-   Caixa alta some com as ascendentes e descendentes, que sao justamente o que
-   o olho usa para reconhecer a palavra: em caixa mista a mesma manchete le
-   mais rapido e cabe mais texto na linha. Em compensacao ela perde presenca,
-   entao o corpo sobe e o peso vai para 800.
-   ========================================================================== */
-
-.custom-home-style .card-top-sm .card-title{
-  text-transform:none !important;
-  font-size:clamp(1.42rem,1.0rem + 1.6vw,2.45rem) !important;
-  font-weight:800 !important;
-  line-height:1.1 !important;
-  letter-spacing:-.026em !important;
-}
-
-/* Com caixa mista o texto fica mais baixo que a versao em caixa alta, entao o
-   veu pode encolher sem descobrir a base da foto. */
-.custom-home-style .card-top-sm .card-img-overlay{
-  padding:60px 32px 28px !important;
-}
-
-@media (max-width:575.98px){
-  .custom-home-style .card-top-sm .card-title{letter-spacing:-.02em !important}
-}
-
-/* ------------------------------------------------------- TITULOS MAIORES
-   Caixa mista pede corpo maior para compensar a presenca que a caixa alta
-   dava de graca. A manchete sobe cerca de 20% no desktop e as manchetes de
-   card acompanham, senao a hierarquia fica com um degrau grande demais. */
-.custom-home-style .card-top-sm .card-title{
-  font-size:clamp(1.42rem,.92rem + 1.7vw,2.4rem) !important;
-}
-.custom-home-style .custom-tease-post .card-title{
-  font-size:1.32rem !important;
-  line-height:1.24 !important;
-}
-/* Com a manchete maior o veu precisa de mais altura para nao cortar o texto. */
-.custom-home-style .card-top-sm .card-img-overlay{
-  padding:62px 32px 28px !important;
-}
-@media (max-width:575.98px){
-  .custom-home-style .custom-tease-post .card-title{font-size:1.24rem !important}
-  .custom-home-style .card-top-sm .card-img-overlay{padding:56px 18px 18px !important}
-}
-
-/* ===== topo.css ===== */
-/* ==========================================================================
-   TOPO
-   O cabecalho nao esta dentro de .custom-home-style, entao o que vai aqui
-   vale para o site inteiro, nao so para a home. Foi de proposito: barra de
-   topo diferente entre home e materia seria pior que nao mexer.
-   ========================================================================== */
-
-header#st-navbar{
-  background:linear-gradient(180deg,#4a1596 0%,#380e7a 100%) !important;
-  border-bottom:0 !important;
-  /* filete dourado colado na barra, mais a sombra que separa do conteudo */
-  box-shadow:0 5px 0 0 #f9a01b, 0 9px 20px rgba(16,6,36,.20);
-  padding-top:.4rem !important;
-  padding-bottom:.4rem !important;
-}
-
-/* Marca. O tema serve a logo dentro de uma caixa amarela; sobre a barra roxa
-   a caixa vira um retangulo colado no fundo. Aqui entra a marca solta em
-   amarelo, com fundo transparente, que o Renato deixou no Desktop. O src do
-    nao muda por CSS, entao a imagem vira fundo do link e o 
-   original fica invisivel, mantendo o link e o alt no lugar. Ela vai embutida
-   em base64 para nao depender de arquivo hospedado em lugar nenhum. */
-header#st-navbar .navbar-brand{
-  display:inline-block;
-  box-sizing:border-box;
-  width:106px;
-  height:92px;
-  padding:13px 16px;
-  background-origin:content-box !important;
-  background:url("data:image/png;base64,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") no-repeat center/contain;
-  background-clip:content-box;
-  transition:transform .2s ease;
-}
-header#st-navbar .navbar-brand img{
-  width:74px !important;
-  height:66px !important;
-  opacity:0;
-}
-header#st-navbar .navbar-brand:hover{transform:scale(1.05)}
-
-/* Busca: de caixa cinza para pilula translucida, com foco dourado visivel.
-   O campo tambem ganha largura, porque busca e a navegacao real do site
-   enquanto as secoes moram dentro do menu sanduiche. */
-header#st-navbar #searchForm{min-width:330px}
-header#st-navbar #search-input{
-  background:rgba(255,255,255,.13) !important;
-  border:1px solid rgba(255,255,255,.24) !important;
-  border-radius:999px !important;
-  color:#fff !important;
-  padding:.52rem 2.7rem .52rem 1.15rem !important;
-  font-size:.92rem !important;
-  transition:background .18s ease, border-color .18s ease, box-shadow .18s ease;
-}
-header#st-navbar #search-input::placeholder{color:rgba(255,255,255,.6) !important}
-header#st-navbar #search-input:focus{
-  background:rgba(255,255,255,.19) !important;
-  border-color:#f9a01b !important;
-  box-shadow:0 0 0 3px rgba(249,160,27,.26) !important;
-  outline:0 !important;
-}
-
-/* Icones sociais: menos peso em repouso, reagem ao passar o mouse. */
-header#st-navbar #socialIcons a{
-  opacity:.72;
-  transition:opacity .18s ease, transform .18s ease;
-}
-header#st-navbar #socialIcons a:hover{opacity:1;transform:translateY(-1px)}
-
-/* Botao do menu com contorno e area de toque de verdade. Estava um icone
-   solto, sem indicacao de que era clicavel. */
-header#st-navbar .container &gt; button.btn{
-  border:1px solid rgba(255,255,255,.26) !important;
-  border-radius:10px !important;
-  padding:.4rem .58rem !important;
-  transition:background .18s ease, border-color .18s ease;
-}
-header#st-navbar .container &gt; button.btn:hover{
-  background:rgba(255,255,255,.13) !important;
-  border-color:rgba(255,255,255,.5) !important;
-}
-header#st-navbar .container &gt; button.btn:focus-visible{
-  outline:3px solid #f9a01b;
-  outline-offset:2px;
-}
-
-/* Painel do menu no mesmo idioma da barra. */
-#offcanvasMenu{background:#2b0a63 !important}
-#offcanvasMenu .offcanvas-header{border-bottom:1px solid rgba(255,255,255,.14)}
-#offcanvasMenu .offcanvas-title{
-  font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;opacity:.7;
-}
-#offcanvasMenu .btn{border-radius:8px}
-#offcanvasMenu a.btn:hover{background:rgba(255,255,255,.1) !important}
-
-/* A marca antiga era uma caixa amarela, e a folga branca de dentro dela fazia
-   as vezes de margem. Com a marca recortada isso sumiu e ela passou a encostar
-   na borda da tela no celular e no filete dourado embaixo. Devolve o respiro. */
-header#st-navbar{padding-bottom:.45rem !important}
-@media (max-width:575.98px){
-  header#st-navbar .container{padding-left:14px !important;padding-right:12px !important}
-  header#st-navbar .navbar-brand{width:94px !important;height:82px !important;padding:12px 14px !important}
-  header#st-navbar .navbar-brand img{width:66px !important;height:58px !important}
-}
-
-/* ------------------------------------------------------------ ALINHAMENTO
-   O respiro que a marca ganhou virou padding do link, e isso empurrou o
-   desenho 16px para dentro. Resultado: a marca nao batia com a borda da
-   manchete nem com o rodape. No desktop o padding da esquerda sai, porque ali
-   o container ja da folga de sobra, e a marca volta a alinhar com o conteudo.
-   No celular ele fica, que e onde o aperto existia de verdade. */
-@media (min-width:768px){
-  header#st-navbar .navbar-brand{
-    padding-left:0 !important;
-    width:90px;
-  }
-}
-
-/* ===== secoes-tres.css ===== */
-/* ==========================================================================
-   SECOES EM TRES COLUNAS
-   Hoje cada editoria sai em duas linhas de dois cards, com foto enorme: quatro
-   chamadas ocupam quase duas telas. Em tres colunas a editoria inteira cabe
-   de uma vez e passa a conversar com o bloco de cima, que ja e de tres.
-
-   O truque: as duas linhas internas viram display:contents, entao os quatro
-   .col sobem um nivel e entram direto na grade da coluna que os contem. Sem
-   isso nao daria, porque cada linha so tem dois filhos.
-
-   Escopo: so as editorias. O primeiro .col-md-12 da home, que carrega a
-   manchete, nao tem .mt-md-5 e fica de fora.
-   ========================================================================== */
-
-@media (min-width:768px){
-  .custom-home-style .col-md-12.mt-md-5{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    align-items:start;
-  }
-  .custom-home-style .col-md-12.mt-md-5 &gt; .row.row-cols-1{
-    display:contents;
-  }
-  /* Os .col trazem largura e calha do sistema de grade do Bootstrap. Dentro de
-     uma grade CSS isso atrapalha, entao caem os tres. */
-  .custom-home-style .col-md-12.mt-md-5 &gt; .row.row-cols-1 &gt; .col{
-    flex:none;
-    width:auto;
-    max-width:none;
-    padding-left:0;
-    padding-right:0;
-    margin-top:0;
-  }
-  /* Card menor pede manchete menor, senao ela come o card inteiro. */
-  .custom-home-style .col-md-12.mt-md-5 .custom-tease-post .card-title{
-    font-size:1.14rem !important;
-    line-height:1.26 !important;
-  }
-  .custom-home-style .col-md-12.mt-md-5 .custom-tease-post .card-body{
-    padding:13px 14px 16px !important;
-  }
-}
-
-/* A quarta chamada nao existe mais: o campo posts_per_category da pagina da
-   home passou de 4 para 3 em 06/09/2026, entao o tema ja entrega tres. A regra
-   de CSS que escondia a quarta foi apagada, porque esconder card que o
-   servidor nem manda e peso morto e mentira no codigo. */
-
-/* ===== titulo-com-link.css ===== */
-/* ==========================================================================
-   O LINK DA EDITORIA SOBE PARA A LINHA DO TITULO
-   Hoje cada bloco fecha com um botao grande "Veja tudo sobre X" embaixo da
-   grade. Ele sobe para a ponta direita da regua do titulo, virando um link
-   discreto. A regua liga o nome da editoria ao link, e o pe do bloco fica
-   limpo para a proxima editoria comecar.
-
-   Limite honesto: nao da para transformar o PROPRIO titulo em link. O rotulo
-   e um  de texto puro, sem ancora, e CSS nao cria elemento. O link que
-   existe e o do botao, e o que da para fazer e mover esse para o lado do
-   titulo. Titulo clicavel de verdade so com mexida no tema.
-   ========================================================================== */
-
-@media (min-width:768px){
-  /* A faixa da editoria tem tres filhos: rotulo, grade de cards e botao. Vira
-     grade de duas colunas para o rotulo e o botao dividirem a primeira linha
-     e a grade de cards ocupar a segunda inteira. */
-  .custom-home-style &gt; .row.g-5:has(&gt; .section-title){
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    align-items:center;
-    column-gap:20px;
-  }
-  .custom-home-style &gt; .row.g-5 &gt; .section-title:first-child{
-    grid-column:1;
-    grid-row:1;
-  }
-  .custom-home-style &gt; .row.g-5 &gt; .section-title:last-child{
-    grid-column:2;
-    grid-row:1;
-    margin:0 !important;
-    width:auto;
-    justify-content:flex-end !important;
-  }
-  .custom-home-style &gt; .row.g-5 &gt; .col-md-12{
-    grid-column:1 / -1;
-    grid-row:2;
-  }
-
-  /* De botao a link. Sem pilula, sem caixa alta gritada, com seta indicando
-     que leva para fora do bloco. */
-  .custom-home-style .section-title:last-child a.btn-stroke{
-    border:0 !important;
-    background:transparent !important;
-    border-radius:0;
-    padding:0 !important;
-    font-size:.8rem !important;
-    letter-spacing:.06em;
-    color:var(--lbr-roxo) !important;
-    white-space:nowrap;
-    text-transform:none;
-    border-bottom:1px solid transparent !important;
-    transition:border-color .18s ease;
-  }
-  .custom-home-style .section-title:last-child a.btn-stroke::after{
-    content:" 2192";
-    font-weight:700;
-  }
-  .custom-home-style .section-title:last-child a.btn-stroke:hover{
-    background:transparent !important;
-    color:var(--lbr-roxo) !important;
-    border-bottom-color:var(--lbr-roxo) !important;
-  }
-}
-
-/* No celular a grade de duas colunas nao ajuda: o nome da editoria mais o link
-   nao cabem na mesma linha sem apertar os dois. O botao continua embaixo. */
-@media (max-width:767.98px){
-  .custom-home-style .section-title:last-child{margin-top:22px !important}
-}
-
-/* ===== rodape.css ===== */
-/* ==========================================================================
-   RODAPE
-   Como estava: faixa cinza neutra, sem relacao com a marca; os selos de
-   parceiro e de jogo responsavel ABRINDO o rodape, antes da navegacao; a
-   marca em caixa amarela chapada, o mesmo problema que o topo tinha; e os
-   cinco links espalhados numa grade de 3 mais 2 com vao enorme.
-
-   Vale para o site inteiro, como o topo. Rodape diferente entre home e
-   materia seria pior que nao mexer.
-   ========================================================================== */
-
-footer.footer{
-  background:linear-gradient(180deg,#2c0a63 0%,#210748 100%) !important;
-  /* mesmo filete dourado do topo, agora em cima: a pagina fecha como abriu */
-  box-shadow:inset 0 3px 0 0 #f9a01b;
-  color:#efeaf7;
-  padding-top:0 !important;
-  margin-top:0 !important;
-}
-
-/* ------------------------------------------------------------------ ORDEM
-   A navegacao sobe, os selos descem. Selo de parceiro e de jogo responsavel
-   e informacao de conformidade, nao e porta de entrada: quem chega ao rodape
-   esta procurando para onde ir. */
-footer.footer &gt; .container{
-  display:flex;
-  flex-direction:column;
-  padding-top:34px;
-  padding-bottom:6px;
-}
-footer.footer &gt; .container &gt; .row:first-child{order:2}
-footer.footer &gt; .container &gt; .row:last-child{order:1}
-
-/* --------------------------------------------------------------- NAVEGACAO */
-footer.footer .footer__nav-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 22px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-footer.footer .footer__nav-list a{
-  color:#efeaf7 !important;
-  text-decoration:none;
-  font-size:.92rem;
-  opacity:.85;
-  padding:4px 0;
-  border-bottom:1px solid transparent;
-  transition:opacity .18s ease, border-color .18s ease;
-}
-footer.footer .footer__nav-list a:hover{
-  opacity:1;
-  border-bottom-color:#f9a01b;
-}
-footer.footer .footer-separator{border:0 !important}
-@media (min-width:992px){
-  footer.footer .footer-separator{flex:0 0 74%;max-width:74%}
-  footer.footer .footer-col-social{flex:0 0 26%;max-width:26%}
-}
-
-/* ------------------------------------------------------- SOCIAL E A MARCA
-   A marca do rodape e SVG embutido, com um  amarelo de fundo e os
-   tracos em roxo. Como o SVG e inline, da para inverter por CSS: o fundo
-   some e o desenho vira amarelo, igual ao topo. */
-footer.footer .footer-col-social svg.logo rect{fill:none !important}
-footer.footer .footer-col-social svg.logo path{fill:#f9a01b !important}
-footer.footer .footer-col-social svg.logo{width:70px !important;height:70px !important}
-
-footer.footer .navbar-nav .nav-link{
-  color:#efeaf7 !important;
-  opacity:.75;
-  transition:opacity .18s ease, transform .18s ease;
-}
-footer.footer .navbar-nav .nav-link:hover{opacity:1;transform:translateY(-2px)}
-footer.footer .navbar-nav svg{width:24px;height:24px}
-
-/* ----------------------------------------------------------------- SELOS
-   Descem, encolhem e ganham uma linha separando da navegacao. Continuam
-   legiveis, so param de disputar a atencao com os links. */
-footer.footer .footer-logos{
-  border-top:1px solid rgba(255,255,255,.13);
-  margin-top:26px;
-}
-footer.footer .footer-logos ul{padding:22px 0 6px !important;gap:26px !important}
-footer.footer .footer-logos img{
-  max-height:30px;
-  width:auto;
-  opacity:.72;
-  transition:opacity .18s ease;
-}
-footer.footer .footer-logos img:hover{opacity:1}
-
-/* ------------------------------------------------------------ COPYRIGHT */
-footer.footer &gt; .mt-sm-4{
-  border-top:1px solid rgba(255,255,255,.13);
-  margin-top:20px !important;
-  padding:16px 12px 20px;
-}
-footer.footer &gt; .mt-sm-4 p{
-  margin:0;
-  font-size:.78rem;
-  letter-spacing:.02em;
-  color:rgba(239,234,247,.6);
-}
-
-@media (max-width:767.98px){
-  footer.footer &gt; .container{padding-top:26px}
-  footer.footer .footer__nav-list{gap:8px 22px;justify-content:center}
-  footer.footer .footer-logos ul{gap:18px !important}
-}
-
-/* ------------------------------------------------------------ ALINHAMENTO
-   Medido em 1320px: o container do topo e o do conteudo tem 1100px de largura
-   e comecam em x=94,5. O do rodape tem 1140 e comeca em 74,5, ou seja, o
-   rodape inteiro fica 20px a esquerda de tudo. Mesma classe .container, largura
-   diferente, entao a correcao vai na mao. */
-footer.footer &gt; .container,
-footer.footer &gt; .mt-sm-4{
-  max-width:1100px;
-  margin-left:auto;
-  margin-right:auto;
-  width:100%;
-}
-
-/* O grupo de social mais marca vinha centralizado dentro da coluna, entao a
-   marca terminava 20px antes da borda direita do conteudo. Encostado a
-   direita ela fecha na mesma linha do botao do menu la em cima. */
-@media (min-width:768px){
-  footer.footer .footer-col-social &gt; div{
-    justify-content:flex-end !important;
-    padding-top:0 !important;
-    padding-bottom:0 !important;
-  }
-}
-
-/* ===== artigo.css ===== */
-/* ==========================================================================
-   PAGINA DE ARTIGO
-   Escopo: .custom-single-post-style, que so existe em post. Nada aqui vaza
-   para a home nem para pagina.
-
-   Diagnostico medido a 1320px antes de mexer:
-   - a coluna de texto tinha 792px de largura, o que da cerca de 100 caracteres
-     por linha. Confortavel e entre 60 e 75: acima disso o olho perde a linha
-     ao voltar para a esquerda.
-   - o corpo estava em 16px com entrelinha de 2rem, ou seja, medida longa E
-     entrelinha larga ao mesmo tempo, que e a pior combinacao das duas.
-   - o H1 e os H2 continuavam em Open Sans enquanto a capa ja tinha Archivo.
-   ========================================================================== */
-
-.custom-single-post-style{
-  --lbr-roxo:#401287;
-  --lbr-ouro:#f9a01b;
-  --lbr-tinta:#16121f;
-  --lbr-cinza:#6b6577;
-  --lbr-linha:#e7e3ee;
-}
-
-/* ------------------------------------------------------ MEDIDA DE LEITURA
-   O tema entrega a coluna em col-md-9. Em vez de mexer na grade, o limite vai
-   no proprio texto: assim a foto de capa e os blocos largos continuam com a
-   largura da coluna e so a leitura corrida encolhe. */
-.custom-single-post-style .article-body &gt; *{
-  max-width:720px;
-}
-/* O video fica largo de proposito: imagem em movimento nao segue medida de
-   leitura, e a diferenca entre texto estreito e midia larga e o que da ritmo
-   a pagina. O seletor pega o wrapper 16:9 do embed, que e o unico filho
-   direto com padding-bottom percentual. */
-.custom-single-post-style .article-body &gt; div[style*="padding-bottom"],
-.custom-single-post-style .article-body &gt; figure,
-.custom-single-post-style .article-body &gt; table{
-  max-width:none;
-}
-
-/* -------------------------------------------------------------- MANCHETE */
-.custom-single-post-style .entry-title{
-  font-family:'Archivo','Arial Black',Arial,sans-serif !important;
-  font-weight:800 !important;
-  color:var(--lbr-tinta) !important;
-  font-size:clamp(1.75rem,1.1rem + 2.1vw,2.85rem) !important;
-  line-height:1.12 !important;
-  letter-spacing:-.025em;
-  margin:6px 0 10px !important;
-  max-width:16ch;
-  max-width:none;
-}
-
-/* A editoria aparecia DUAS VEZES seguidas: no caminho de navegacao e no selo
-   logo abaixo dele. O caminho fica, porque carrega schema BreadcrumbList e o
-   Google usa ele no resultado de busca. O selo sai, e o caminho ganha o peso
-   que o selo tinha: ultimo item em roxo, com marcador dourado. */
-.custom-single-post-style .badge.bg-purple{display:none !important}
-
-.custom-single-post-style nav[aria-label="breadcrumb"] .breadcrumb{
-  margin-bottom:14px;
-  font-size:.84rem;
-  letter-spacing:.02em;
-  align-items:center;
-}
-.custom-single-post-style .breadcrumb-item a{
-  color:var(--lbr-cinza) !important;
-  text-decoration:none;
-}
-.custom-single-post-style .breadcrumb-item:last-child a{
-  color:var(--lbr-roxo) !important;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  position:relative;
-  padding-left:12px;
-}
-.custom-single-post-style .breadcrumb-item:last-child a::before{
-  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
-  width:4px;height:14px;border-radius:2px;background:var(--lbr-ouro);
-}
-.custom-single-post-style .breadcrumb-item a:hover{text-decoration:underline}
-
-/* Linha de credito */
-.custom-single-post-style .entry-title + p.text-muted{
-  font-size:.85rem !important;
-  color:var(--lbr-cinza) !important;
-  letter-spacing:.02em;
-  margin:0 0 22px !important;
-  line-height:1.5 !important;
-  padding-bottom:16px;
-  border-bottom:1px solid var(--lbr-linha);
-  max-width:720px;
-}
-
-/* ------------------------------------------------------------ CORPO
-   Corpo maior e entrelinha menor. Com a medida curta, 17px com 1,72 le melhor
-   que 16px com 2,0, que era o que estava. */
-.custom-single-post-style .article-body{
-  font-size:1.14rem;
-  color:#231f2e;
-}
-.custom-single-post-style .article-body p{
-  line-height:1.72 !important;
-  margin-bottom:1.35em !important;
-}
-.custom-single-post-style .article-body li{
-  line-height:1.72;
-  margin-bottom:.5em;
-}
-.custom-single-post-style .article-body a{
-  text-decoration-thickness:1px;
-  text-underline-offset:2px;
-}
-
-/* Intertitulos */
-.custom-single-post-style .article-content h2,
-.custom-single-post-style .article-content .h2{
-  font-family:'Archivo',Arial,sans-serif !important;
-  font-weight:800 !important;
-  color:var(--lbr-tinta) !important;
-  font-size:1.5rem !important;
-  line-height:1.2 !important;
-  letter-spacing:-.018em;
-  margin:44px 0 14px !important;
-  padding-left:14px;
-  border-left:4px solid var(--lbr-ouro);
-}
-
-/* Legenda da foto de capa */
-.custom-single-post-style figure.figure-img figcaption,
-.custom-single-post-style figure.figure-img .figure-caption{
-  font-size:.82rem;
-  color:var(--lbr-cinza);
-  padding-top:8px;
-}
-.custom-single-post-style figure.figure-img .ratio{border-radius:12px;overflow:hidden}
-
-/* ------------------------------------------------- COMPARTILHAR E AUTOR */
-.custom-single-post-style .article-share{
-  max-width:720px;
-  border-top:1px solid var(--lbr-linha);
-  padding-top:18px;
-  margin-top:34px;
-}
-.custom-single-post-style .author-box{
-  max-width:720px;
-  background:#faf9fc;
-  border:1px solid var(--lbr-linha) !important;
-  border-radius:14px;
-  padding:18px 20px !important;
-}
-.custom-single-post-style .author-box p{
-  line-height:1.6 !important;
-  margin-bottom:0 !important;
-  font-size:.92rem;
-  color:var(--lbr-cinza);
-}
-.custom-single-post-style .author-box .author-name{
-  font-family:'Archivo',Arial,sans-serif;
-  font-weight:700;
-  color:var(--lbr-tinta);
-}
-
-/* --------------------------------------------------------- VEJA TAMBEM
-   Mesmo tratamento da home: regua com marcador dourado, card com moldura e
-   manchete em tinta escura que vira roxa no hover. */
-.custom-single-post-style .related-posts .section-title{
-  justify-content:flex-start !important;
-  align-items:center;
-  gap:16px;
-  width:100%;
-}
-.custom-single-post-style .related-posts .section-title::after{
-  content:"";flex:1 1 auto;height:1px;background:var(--lbr-linha);
-}
-.custom-single-post-style .related-posts .section-title p{
-  border-top:0 !important;
-  margin:0 !important;
-  padding:0 0 0 14px !important;
-  font-size:.95rem !important;
-  letter-spacing:.14em;
-  color:var(--lbr-roxo);
-  position:relative;
-}
-.custom-single-post-style .related-posts .section-title p::before{
-  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
-  width:5px;height:18px;border-radius:3px;background:var(--lbr-ouro);
-}
-.custom-single-post-style .related-posts .custom-tease-post,
-.custom-single-post-style .related-posts .col &gt; a{
-  border:1px solid var(--lbr-linha) !important;
-  border-radius:12px;
-  overflow:hidden;
-  background:#fff;
-  display:block;
-  height:100%;
-  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-}
-.custom-single-post-style .related-posts .ratio{--bs-aspect-ratio:56.25% !important;overflow:hidden}
-.custom-single-post-style .related-posts .ratio img{
-  object-fit:cover;object-position:center 26%;
-  border-bottom:0 !important;
-  transition:transform .5s cubic-bezier(.2,.7,.3,1);
-}
-.custom-single-post-style .related-posts .card-body{padding:13px 15px 16px !important}
-.custom-single-post-style .related-posts .card-title,
-.custom-single-post-style .related-posts .card-body a{
-  font-family:'Archivo',Arial,sans-serif;
-  font-weight:700;
-  color:var(--lbr-tinta) !important;
-  font-size:1rem;
-  line-height:1.26;
-  text-decoration:none;
-  transition:color .2s ease;
-}
-@media (hover:hover){
-  .custom-single-post-style .related-posts .col &gt; a:hover{
-    transform:translateY(-4px);
-    border-color:#d6cee6 !important;
-    box-shadow:0 14px 28px rgba(22,18,31,.13);
-  }
-  .custom-single-post-style .related-posts .col &gt; a:hover img{transform:scale(1.05)}
-  .custom-single-post-style .related-posts .col &gt; a:hover .card-title{color:var(--lbr-roxo) !important}
-}
-
-/* ------------------------------------------------------------- COMENTARIOS
-   O #disqus_thread e irmao da coluna de texto, nao filho, entao ele nascia com
-   a largura inteira da linha e desalinhado do artigo. */
-.custom-single-post-style #disqus_thread{
-  width:100%;
-  max-width:825px;
-  margin:34px auto 0;
-  padding-top:26px;
-  border-top:1px solid var(--lbr-linha);
-}
-
-@media (max-width:767.98px){
-  .custom-single-post-style .article-content h2,
-  .custom-single-post-style .article-content .h2{
-    font-size:1.32rem !important;
-    margin:34px 0 12px !important;
-  }
-  .custom-single-post-style .article-body{font-size:1.08rem}
-}
-
-/* O bloco de comentarios terminava encostado na faixa do rodape. Ele e o
-   ultimo elemento da pagina, entao nao tem nada depois para empurrar: o ar
-   precisa sair dele mesmo. */
-.custom-single-post-style #disqus_thread{margin-bottom:64px}
-@media (max-width:767.98px){
-  .custom-single-post-style #disqus_thread{margin-bottom:42px}
-}
-
-/* ==========================================================================
-   ACABAMENTO
-   ========================================================================== */
-
-/* Linha de apoio. O formato do LABR ja escreve o primeiro paragrafo como
-   resposta direta a pergunta da materia, em 40 a 60 palavras. Ele so nunca
-   teve tratamento proprio: saia do mesmo tamanho do resto. */
-.custom-single-post-style .article-body &gt; p:first-of-type{
-  font-size:1.22em;
-  line-height:1.55 !important;
-  color:#3a3448;
-  margin-bottom:1.6em !important;
-}
-
-/* Manchete e intertitulos sem palavra orfa na ultima linha. */
-.custom-single-post-style .entry-title,
-.custom-single-post-style .article-content h2{
-  text-wrap:balance;
-}
-.custom-single-post-style .article-body p{text-wrap:pretty}
-
-/* A barra sticky do topo tem uns 90px. Sem isto, link para ancora joga o
-   intertitulo para debaixo dela e a pessoa cai no lugar errado. */
-.custom-single-post-style h2,
-.custom-single-post-style h3,
-.custom-single-post-style [id]{scroll-margin-top:110px}
-
-/* Links do texto: sublinhado fino e afastado, que engrossa no hover. O
-   sublinhado colado na letra e o que mais envelhece um texto na tela. */
-.custom-single-post-style .article-body p a,
-.custom-single-post-style .article-body li a{
-  color:var(--lbr-roxo) !important;
-  text-decoration-color:rgba(64,18,135,.38);
-  text-decoration-thickness:1.5px;
-  text-underline-offset:3px;
-  transition:text-decoration-color .18s ease;
-}
-.custom-single-post-style .article-body p a:hover,
-.custom-single-post-style .article-body li a:hover{
-  text-decoration-color:var(--lbr-ouro);
-}
-
-/* CTA do Instagram. O modelo do formato manda uma barra de largura inteira
-   com o texto sublinhado, que le como link quebrado e nao como botao. Vira
-   botao de verdade, do tamanho do conteudo. Precisa de !important porque o
-   estilo vem inline no HTML da materia. */
-.custom-single-post-style .article-body a[href*="instagram.com/lakersbrasil"]{
-  display:inline-block !important;
-  width:auto !important;
-  text-decoration:none !important;
-  padding:13px 26px !important;
-  border-radius:999px !important;
-  background:var(--lbr-roxo) !important;
-  font-weight:700;
-  font-size:.94rem;
-  letter-spacing:.02em;
-  transition:background .2s ease, transform .2s ease;
-}
-.custom-single-post-style .article-body a[href*="instagram.com/lakersbrasil"]:hover{
-  background:#2d0c63 !important;
-  transform:translateY(-2px);
-}
-
-/* Compartilhar */
-.custom-single-post-style .article-share ul{padding:0 !important;gap:10px !important}
-.custom-single-post-style .article-share strong{
-  font-size:.76rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--lbr-cinza);
-  font-weight:700;
-  margin-right:6px;
-}
-.custom-single-post-style .article-share .share-item a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:38px;height:38px;
-  border:1px solid var(--lbr-linha);
-  border-radius:999px;
-  color:var(--lbr-tinta);
-  transition:background .18s ease, border-color .18s ease, color .18s ease;
-}
-.custom-single-post-style .article-share .share-item a:hover{
-  background:var(--lbr-roxo);
-  border-color:var(--lbr-roxo);
-  color:#fff;
-}
-
-/* Selo do Google: era um bloco solto no meio do vao entre o texto e o
-   compartilhar. Ganha respiro e para de flutuar. */
-.custom-single-post-style .nsn-gps-callout{
-  max-width:720px;
-  margin:30px 0 4px;
-}
-
-::selection{background:rgba(64,18,135,.16)}
-
-/* O tema escreve "Compartir :", em espanhol, em toda materia. A correcao de
-   verdade e na string do tema, com a NSN. Enquanto isso, o texto original e
-   apagado visualmente e o certo entra no ::after. Leitor de tela ainda alcanca
-   o texto antigo, entao isso e remendo, nao conserto. */
-.custom-single-post-style .article-share strong{
-  font-size:0 !important;
-  letter-spacing:0 !important;
-}
-.custom-single-post-style .article-share strong::after{
-  content:"Compartilhar";
-  font-size:.76rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--lbr-cinza);
-  font-weight:700;
-}
-
-/* ------------------------------------------------- FIM DA MATERIA
-   Tres coisas se atropelavam no pe do texto: o compartilhar colado na caixa do
-   autor, e a etiqueta da editoria num retangulo preto centralizado, que e o
-   estilo padrao do Bootstrap e destoa de tudo que ja arrumamos. */
-.custom-single-post-style .article-share{
-  margin-bottom:30px;
-  padding-bottom:4px;
-}
-.custom-single-post-style .author-box{
-  margin-top:0 !important;
-  margin-bottom:34px !important;
-}
-
-/* Etiqueta da editoria: sai do retangulo preto e vira pilula, encostada a
-   esquerda como o resto do texto, com o mesmo marcador dourado que identifica
-   editoria na home e no caminho de navegacao. */
-.custom-single-post-style &gt; .row &gt; div &gt; .section-title:last-child,
-.custom-single-post-style .col-md-9 &gt; .section-title{
-  justify-content:flex-start !important;
-  margin:0 0 10px !important;
-}
-.custom-single-post-style .col-md-9 &gt; .section-title p{
-  margin:0 !important;
-  padding:0 !important;
-  border-top:0 !important;
-}
-.custom-single-post-style .col-md-9 &gt; .section-title a.btn-stroke{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  border:1.5px solid #d6cee6 !important;
-  border-radius:999px !important;
-  background:transparent !important;
-  color:var(--lbr-roxo) !important;
-  padding:.6rem 1.25rem !important;
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  transition:background .2s ease, color .2s ease, border-color .2s ease;
-}
-.custom-single-post-style .col-md-9 &gt; .section-title a.btn-stroke::before{
-  content:"";
-  width:5px;height:15px;border-radius:3px;
-  background:var(--lbr-ouro);
-  flex:0 0 5px;
-}
-.custom-single-post-style .col-md-9 &gt; .section-title a.btn-stroke:hover{
-  background:var(--lbr-roxo) !important;
-  border-color:var(--lbr-roxo) !important;
-  color:#fff !important;
-}
-
-/* ===== progresso-css.css ===== */
-/* ==========================================================================
-   BARRA DE LEITURA SEM JAVASCRIPT
-   O Renato nao tem acesso ao GTM, e o Personalizar so aceita CSS. Sobra uma
-   rota que nao existia ha pouco tempo: animacao guiada por rolagem, feita so
-   com CSS.
-
-   Como funciona: o  vira uma linha do tempo chamada --lbr-artigo, o
-   html expoe essa linha para o resto do documento com timeline-scope, e um
-   pseudo-elemento do cabecalho e animado por ela. A faixa "contain" comeca
-   quando o topo do artigo encosta no topo da tela e termina quando o fim dele
-   encosta na base. E exatamente a leitura, sem contar comentario nem rodape.
-
-   LIMITE: isso e Chrome e Edge, inclusive no Android. Onde nao houver suporte,
-   a regra e ignorada e simplesmente nao aparece barra nenhuma. Nada quebra.
-   ========================================================================== */
-
-@media (prefers-reduced-motion: no-preference) {
-  html{ timeline-scope: --lbr-artigo; }
-
-  .custom-single-post-style article{
-    view-timeline-name: --lbr-artigo;
-    view-timeline-axis: block;
-  }
-
-  /* A barra ocupa a mesma faixa do filete dourado do cabecalho, entao a
-     leitura pinta um elemento que ja fazia parte do desenho. */
-  header#st-navbar::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:100%;
-    height:5px;
-    background:#fff;
-    box-shadow:0 0 8px rgba(255,255,255,.55);
-    transform:scaleX(0);
-    transform-origin:0 50%;
-    pointer-events:none;
-    z-index:5;
-    animation:lbr-progresso linear both;
-    animation-timeline:--lbr-artigo;
-    animation-range:contain 0% contain 100%;
-  }
-
-  @keyframes lbr-progresso{
-    to{ transform:scaleX(1); }
-  }
-}
 		</style>
 		
 <style id="lbr-v2">
@@ -3140,6 +1666,70 @@ footer.footer > .mt-sm-4{
     to{ transform:scaleX(1); }
   }
 }
+
+/* ===== bloco-elenco ===== */
+
+/* ==========================================================================
+   BLOCO DE ELENCO NA HOME
+   Sem foto: das 19 paginas de perfil so 5 tem imagem destacada, e grade com
+   buraco e pior que grade sem foto. O numero da camisa faz o papel de ancora
+   visual, que e como o torcedor procura o jogador.
+   ========================================================================== */
+.lbr-elenco-wrap{margin-top:20px}
+.lbr-elenco{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:2px;
+  background:var(--lbr-linha);
+  border:1px solid var(--lbr-linha);
+  border-radius:12px;
+  overflow:hidden;
+}
+@media (min-width:576px){ .lbr-elenco{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (min-width:992px){ .lbr-elenco{grid-template-columns:repeat(4,minmax(0,1fr))} }
+
+.lbr-el-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 16px;
+  background:#fff;
+  text-decoration:none;
+  transition:background .16s ease;
+}
+.lbr-el-item--sem{cursor:default}
+@media (hover:hover){
+  a.lbr-el-item:hover{background:#faf7ff}
+  a.lbr-el-item:hover .lbr-el-nome{color:var(--lbr-roxo)}
+}
+.lbr-el-num{
+  flex:0 0 34px;
+  font-family:'Archivo',Arial,sans-serif;
+  font-weight:800;
+  font-size:1.24rem;
+  line-height:1;
+  color:var(--lbr-roxo);
+  opacity:.38;
+  font-variant-numeric:tabular-nums;
+  text-align:right;
+}
+.lbr-el-txt{display:flex;flex-direction:column;min-width:0}
+.lbr-el-nome{
+  font-family:'Archivo',Arial,sans-serif;
+  font-weight:700;
+  font-size:.98rem;
+  line-height:1.2;
+  color:var(--lbr-tinta);
+  transition:color .16s ease;
+}
+.lbr-el-pos{
+  font-size:.76rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lbr-cinza);
+  margin-top:3px;
+}
+
 </style>
 </head>
 
@@ -3457,7 +2047,131 @@ footer.footer > .mt-sm-4{
 
 
     
-        <div class="row g-5">
+        
+<div class="row g-5" id="lbr-bloco-elenco">
+  <div class="section-title d-flex"><p>Elenco 2026-27</p></div>
+  <div class="col-md-12 lbr-elenco-wrap">
+    <div class="lbr-elenco">
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/adou-thiero/">
+        <span class="lbr-el-num">1</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Adou Thiero</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jarred-vanderbilt/">
+        <span class="lbr-el-num">2</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Jarred Vanderbilt</span>
+          <span class="lbr-el-pos">Ala-pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/dalton-knecht/">
+        <span class="lbr-el-num">4</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Dalton Knecht</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/quentin-grimes/">
+        <span class="lbr-el-num">5</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Quentin Grimes</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jaden-hardy/">
+        <span class="lbr-el-num">7</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Jaden Hardy</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/bronny-james/">
+        <span class="lbr-el-num">9</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Bronny James</span>
+          <span class="lbr-el-pos">Armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/collin-sexton/">
+        <span class="lbr-el-num">10</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Collin Sexton</span>
+          <span class="lbr-el-pos">Armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/ziaire-williams/">
+        <span class="lbr-el-num">11</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Ziaire Williams</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/jake-laravia/">
+        <span class="lbr-el-num">12</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Jake LaRavia</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/walker-kessler/">
+        <span class="lbr-el-num">14</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Walker Kessler</span>
+          <span class="lbr-el-pos">Pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/austin-reaves/">
+        <span class="lbr-el-num">15</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Austin Reaves</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/matisse-thybulle/">
+        <span class="lbr-el-num">26</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Matisse Thybulle</span>
+          <span class="lbr-el-pos">Ala</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/cameron-carr/">
+        <span class="lbr-el-num">43</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Cameron Carr</span>
+          <span class="lbr-el-pos">Ala-armador</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/sandro-mamukelashvili/">
+        <span class="lbr-el-num">54</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Sandro Mamukelashvili</span>
+          <span class="lbr-el-pos">Ala-pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/kevon-looney/">
+        <span class="lbr-el-num">55</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Kevon Looney</span>
+          <span class="lbr-el-pos">Pivô</span>
+        </span>
+      </a>
+      <a class="lbr-el-item" href="https://lakersbrasil.com/elenco-lakers/luka-doncic/">
+        <span class="lbr-el-num">77</span>
+        <span class="lbr-el-txt">
+          <span class="lbr-el-nome">Luka Doncic</span>
+          <span class="lbr-el-pos">Armador</span>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="section-title d-flex">
+    <p><a href="https://lakersbrasil.com/elenco-lakers/" class="btn-stroke">Ver o elenco completo</a></p>
+  </div>
+</div>
+
+<div class="row g-5">
 
             <div class="section-title d-flex justify-content-center">
                 <p>Negociações</p>

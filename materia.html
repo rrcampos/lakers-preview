@@ -1677,6 +1677,70 @@ footer.footer > .mt-sm-4{
     to{ transform:scaleX(1); }
   }
 }
+
+/* ===== bloco-elenco ===== */
+
+/* ==========================================================================
+   BLOCO DE ELENCO NA HOME
+   Sem foto: das 19 paginas de perfil so 5 tem imagem destacada, e grade com
+   buraco e pior que grade sem foto. O numero da camisa faz o papel de ancora
+   visual, que e como o torcedor procura o jogador.
+   ========================================================================== */
+.lbr-elenco-wrap{margin-top:20px}
+.lbr-elenco{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:2px;
+  background:var(--lbr-linha);
+  border:1px solid var(--lbr-linha);
+  border-radius:12px;
+  overflow:hidden;
+}
+@media (min-width:576px){ .lbr-elenco{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (min-width:992px){ .lbr-elenco{grid-template-columns:repeat(4,minmax(0,1fr))} }
+
+.lbr-el-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 16px;
+  background:#fff;
+  text-decoration:none;
+  transition:background .16s ease;
+}
+.lbr-el-item--sem{cursor:default}
+@media (hover:hover){
+  a.lbr-el-item:hover{background:#faf7ff}
+  a.lbr-el-item:hover .lbr-el-nome{color:var(--lbr-roxo)}
+}
+.lbr-el-num{
+  flex:0 0 34px;
+  font-family:'Archivo',Arial,sans-serif;
+  font-weight:800;
+  font-size:1.24rem;
+  line-height:1;
+  color:var(--lbr-roxo);
+  opacity:.38;
+  font-variant-numeric:tabular-nums;
+  text-align:right;
+}
+.lbr-el-txt{display:flex;flex-direction:column;min-width:0}
+.lbr-el-nome{
+  font-family:'Archivo',Arial,sans-serif;
+  font-weight:700;
+  font-size:.98rem;
+  line-height:1.2;
+  color:var(--lbr-tinta);
+  transition:color .16s ease;
+}
+.lbr-el-pos{
+  font-size:.76rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lbr-cinza);
+  margin-top:3px;
+}
+
 </style>
 <style id="lbr-extra">
 /* ==========================================================================
