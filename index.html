@@ -445,6 +445,27 @@ main.custom-home-style{padding-top:30px !important}
    object-position so desloca na vertical, preservando cabeca. */
 .custom-home-style .custom-tease-post .ratio{--bs-aspect-ratio:56.25% !important}
 
+/* ---------------------------------------- 11. PLACAR ALINHA COM O CALENDARIO
+   A coluna do placar terminava mais alta que a lista de jogos ao lado, e o
+   botao ficava solto no meio da faixa. Em vez de chutar uma altura fixa, a
+   coluna vira flex: o card do placar cresce para ocupar o que sobra e o botao
+   e empurrado para a base. Assim ele fecha na linha do ultimo jogo qualquer
+   que seja o tamanho da lista. */
+@media (min-width:768px){
+  .custom-home-style .col-md-5{
+    display:flex;
+    flex-direction:column;
+  }
+  .custom-home-style .col-md-5 > .row.border-top{
+    flex:1 1 auto;
+    align-content:center;
+    align-items:center;
+  }
+  .custom-home-style .col-md-5 > .border-bottom{
+    margin-top:auto;
+  }
+}
+
 /* ===== tipo-a.css ===== */
 /* ==========================================================================
    FONTES
