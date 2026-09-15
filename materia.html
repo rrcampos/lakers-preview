@@ -1286,29 +1286,68 @@ footer.footer > .mt-sm-4{
    que o selo tinha: ultimo item em roxo, com marcador dourado. */
 .custom-single-post-style .badge.bg-purple{display:none !important}
 
+/* O caminho em si tinha TRES tratamentos diferentes em 16px de altura: um
+   icone de casa, o chevron do Bootstrap e a editoria em caixa alta roxa com
+   marcador dourado. Duas coisas davam errado nisso. O marcador dourado e o
+   mesmo dos intertitulos e da regua de secao, entao gastar ele aqui apagava o
+   significado que ele tem no resto da pagina. E a caixa alta em roxo disputava
+   atencao com o H1, que comeca seis pixels abaixo.
+
+   Agora o caminho e texto de um peso so, a casa vira a palavra Home, e a
+   editoria vira etiqueta: fundo lilas, caixa mista, canto redondo. Um objeto
+   clicavel em vez de tres sinais soltos. */
 .custom-single-post-style nav[aria-label="breadcrumb"] .breadcrumb{
-  margin-bottom:14px;
+  margin-bottom:18px;
   font-size:.84rem;
-  letter-spacing:.02em;
+  letter-spacing:.01em;
   align-items:center;
+  gap:2px;
 }
 .custom-single-post-style .breadcrumb-item a{
   color:var(--lbr-cinza) !important;
   text-decoration:none;
+  transition:color .18s ease;
 }
+.custom-single-post-style .breadcrumb-item:not(:last-child) a:hover{
+  color:var(--lbr-tinta) !important;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* A casa. O SVG sai e a palavra entra pelo ::after do proprio span, entao o
+   link, o href e o schema continuam intactos. */
+.custom-single-post-style .breadcrumb-item:first-child a svg{display:none}
+.custom-single-post-style .breadcrumb-item:first-child a span::after{
+  content:"Home";
+}
+
+/* O separador do Bootstrap vem com float, que desalinha qualquer coisa que
+   nao seja texto puro ao lado. */
+.custom-single-post-style .breadcrumb-item + .breadcrumb-item::before{
+  float:none !important;
+  content:"›" !important;
+  color:var(--lbr-cinza);
+  opacity:.55;
+  padding:0 8px 0 6px !important;
+  font-size:1rem;
+  line-height:1;
+}
+
+/* A editoria como etiqueta. */
 .custom-single-post-style .breadcrumb-item:last-child a{
   color:var(--lbr-roxo) !important;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  position:relative;
-  padding-left:12px;
+  font-weight:600;
+  background:#f1ecfb;
+  border-radius:999px;
+  padding:.18rem .7rem;
+  transition:background .18s ease, color .18s ease;
 }
-.custom-single-post-style .breadcrumb-item:last-child a::before{
-  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
-  width:4px;height:14px;border-radius:2px;background:var(--lbr-ouro);
+.custom-single-post-style .breadcrumb-item:last-child a::before{content:none}
+.custom-single-post-style .breadcrumb-item:last-child a:hover{
+  background:var(--lbr-roxo);
+  color:#fff !important;
+  text-decoration:none;
 }
-.custom-single-post-style .breadcrumb-item a:hover{text-decoration:underline}
 
 /* Linha de credito */
 .custom-single-post-style .entry-title + p.text-muted{
