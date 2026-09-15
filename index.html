@@ -445,6 +445,23 @@ main.custom-home-style{padding-top:30px !important}
    object-position so desloca na vertical, preservando cabeca. */
 .custom-home-style .custom-tease-post .ratio{--bs-aspect-ratio:56.25% !important}
 
+/* No CELULAR essa regra nao estava valendo, e a foto do card virava uma tira de
+   100px de altura, 3,6:1. O tema faz, abaixo de 768px:
+
+     .custom-tease-post .ratio{flex:0 0 100px}
+
+   A MESMA linha existe para .custom-tease-post-row, e la ela faz sentido: o
+   card deitado poe a foto a esquerda, e 100px e LARGURA. No card em pe, que e o
+   da home, o pai e .card, que o Bootstrap deixa em flex-direction:column, entao
+   o flex-basis vira ALTURA. Nao e escolha de desenho: e a regra do card deitado
+   pingando no card em pe.
+
+   Soltando o basis, o padding do proprio .ratio volta a mandar e a foto assume
+   o mesmo 16:9 do desktop, o que da 205px de altura em tela de 390px. */
+@media (max-width:767.98px){
+  .custom-home-style .custom-tease-post .ratio{flex:0 0 auto !important}
+}
+
 /* ---------------------------------------- 11. PLACAR ALINHA COM O CALENDARIO
    A coluna do placar terminava mais alta que a lista de jogos ao lado, e o
    botao ficava solto no meio da faixa. Em vez de chutar uma altura fixa, a
