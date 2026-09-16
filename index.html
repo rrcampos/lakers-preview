@@ -1862,6 +1862,38 @@ footer.footer > .mt-sm-4{
 }
 
 </style>
+
+<style id="lbr-apostas">
+.lba-sec{margin:56px 0 8px}
+.lba-hd{display:flex;align-items:center;gap:16px;margin:0 0 6px}
+.lba-hd-t{font-family:'Archivo',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;color:#401287;white-space:nowrap;position:relative;padding-left:14px;margin:0}
+.lba-hd-t::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:5px;height:18px;border-radius:3px;background:#F9A01B}
+.lba-hd-r{flex:1 1 auto;height:1px;background:#e7e3ee}
+.lba-hd-a{font-size:.82rem;font-weight:700;color:#401287;text-decoration:none;white-space:nowrap}
+.lba-hd-a::after{content:" →"}
+.lba-sub{font-size:14.5px;color:#6f6879;margin:0 0 20px;line-height:1.5}
+.lba-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;width:100%}
+.lba-card{min-width:0;display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:14px;background:#fff;overflow:hidden;border:1px solid #e7e3ee;transition:transform .15s,box-shadow .15s,border-color .15s}
+.lba-card:hover{transform:translateY(-2px);border-color:#401287;box-shadow:0 10px 24px rgba(64,18,135,.16)}
+.lba-painel{background:#2A095E;padding:16px 16px 17px;min-height:130px;display:flex;flex-direction:column}
+.lba-chip{align-self:flex-start;margin-bottom:auto;font-family:'Archivo',sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#2A095E;background:#F9A01B;border-radius:5px;padding:4px 8px;white-space:nowrap}
+.lba-tit{font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;line-height:1.14;color:#fff;margin:16px 0 0;letter-spacing:-.01em;text-transform:none}
+.lba-tit em{font-style:normal;color:#F9A01B}
+.lba-regua{width:34px;height:3px;background:#F9A01B;border-radius:2px;margin-top:12px}
+.lba-desc{font-size:13px;line-height:1.5;color:#6f6879;margin:13px 15px 0}
+.lba-cta{align-self:flex-start;margin:auto 15px 15px;padding-top:12px;font-size:12.5px;font-weight:600;color:#401287}
+.lba-cta::after{content:" →"}
+.lba-nota{font-size:12px;color:#8b8494;margin:16px 0 0;text-align:center}
+.lba-nota a{color:#401287}
+.lba-aviso{border-bottom:1px solid rgba(255,255,255,.14);padding:0 0 20px;margin:0 0 6px}
+.lba-aviso-in{display:flex;align-items:flex-start;gap:22px}
+.lba-aviso p{margin:0;font-size:12.5px;line-height:1.7;flex:1 1 auto;color:#cfc7db}
+.lba-aviso strong{color:#fff}
+.lba-18{flex:0 0 auto;width:34px;height:34px;border:1.5px solid #8b7fb5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;color:#cfc7db}
+@media (max-width:991px){.lba-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.lba-aviso-in{flex-direction:column;gap:14px}.lba-hd-a{display:none}}
+@media (max-width:430px){.lba-grid{gap:12px}.lba-tit{font-size:17.5px}.lba-painel{min-height:112px}.lba-desc{font-size:12.5px}}
+</style>
 </head>
 
 	<body class="home wp-singular page-template-default page page-id-26730 wp-theme-starter-theme wp-child-theme-lakersbrasil-theme" data-dark-mode="disabled">
@@ -3246,12 +3278,73 @@ footer.footer > .mt-sm-4{
 
 
 					
+
+<div class="container">
+  <section class="lba-sec">
+    <div class="lba-hd">
+      <p class="lba-hd-t">Apostas</p>
+      <span class="lba-hd-r"></span>
+      <a class="lba-hd-a" href="https://lakersbrasil.com/apostas/">Ver tudo sobre Apostas</a>
+    </div>
+    <p class="lba-sub">Guias de aposta em NBA, com as plataformas autorizadas a operar no Brasil.</p>
+    <div class="lba-grid">
+
+        <a class="lba-card" href="https://lakersbrasil.com/apostas/nba-hoje-jogos-ao-vivo-transmissao/">
+          <div class="lba-painel">
+            <span class="lba-chip">Atualiza todo dia</span>
+            <h3 class="lba-tit">Onde assistir à <em>NBA hoje</em></h3>
+            <span class="lba-regua"></span>
+          </div>
+          <p class="lba-desc">Os jogos do dia, o horário de Brasília e quem transmite cada um.</p>
+          <span class="lba-cta">Ver os jogos de hoje</span>
+        </a>
+
+        <a class="lba-card" href="https://lakersbrasil.com/apostas/palpites-nba-hoje/">
+          <div class="lba-painel">
+            <span class="lba-chip">Rodada de hoje</span>
+            <h3 class="lba-tit">Palpites da <em>NBA de hoje</em></h3>
+            <span class="lba-regua"></span>
+          </div>
+          <p class="lba-desc">Os prognósticos da rodada, jogo a jogo, atualizados todo dia.</p>
+          <span class="lba-cta">Ver os palpites</span>
+        </a>
+
+        <a class="lba-card" href="https://lakersbrasil.com/apostas/resultados-nba/">
+          <div class="lba-painel">
+            <span class="lba-chip">Placares</span>
+            <h3 class="lba-tit">Resultados da <em>NBA</em></h3>
+            <span class="lba-regua"></span>
+          </div>
+          <p class="lba-desc">O placar de todos os jogos da temporada, do mais recente ao mais antigo.</p>
+          <span class="lba-cta">Ver os resultados</span>
+        </a>
+
+        <a class="lba-card" href="https://lakersbrasil.com/apostas/casas-de-apostas-que-pagam-via-pix/">
+          <div class="lba-painel">
+            <span class="lba-chip">Ranking</span>
+            <h3 class="lba-tit">Casas que pagam <em>via Pix</em></h3>
+            <span class="lba-regua"></span>
+          </div>
+          <p class="lba-desc">As plataformas autorizadas com saque por Pix, comparadas lado a lado.</p>
+          <span class="lba-cta">Ver o ranking</span>
+        </a>
+    </div>
+    <p class="lba-nota">Conteúdo com links de afiliação. <a href="https://lakersbrasil.com/apostas/">Como avaliamos as plataformas</a>.</p>
+  </section>
+</div>
+
 </main>
 
 					<footer class="py-3 mt-4 footer">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<div class="lba-aviso">
+					<div class="lba-aviso-in">
+						<p><strong>Aviso Legal.</strong> O Lakers Brasil faz cobertura jornalística de NBA e produz conteúdo sobre apostas esportivas e jogo responsável. Nesse conteúdo usamos marketing e links de afiliação: ao clicar, você pode ser levado a um de nossos anunciantes. Antes de contratar qualquer serviço, confirme que a plataforma é autorizada a operar no Brasil e atenda às exigências do jogo responsável. Aposta não é investimento. Proibido para menores de 18 anos. Aposte com segurança e responsabilidade.</p>
+						<span class="lba-18">18+</span>
+					</div>
+				</div>
 				<div class="footer-logos">
 					<ul class="list-unstyled m-0 p-0 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 py-4">
 						<li>
