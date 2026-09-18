@@ -2211,7 +2211,78 @@ footer.footer > .mt-sm-4{
 
 
     
-        <div class="row g-5">
+        
+<!-- SIMULACAO de classificacao, 18/09/2026. Dados inventados: a temporada 2026-27 so comeca em 21/10. -->
+<style id="lbr-classificacao">
+.lbc-sec{margin:40px 0 8px;width:100%;max-width:720px}
+.lbc-col{flex:1 1 100%;width:100%;padding-left:calc(var(--bs-gutter-x,1.5rem)*.5);padding-right:calc(var(--bs-gutter-x,1.5rem)*.5)}
+.lbc-topo{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin:14px 0 4px}
+.lbc-pos{font-family:var(--bs-body-font-family);font-size:1.6rem;font-weight:700;color:var(--lbr-roxo);line-height:1}
+.lbc-frase{font-size:.92rem;color:var(--lbr-tinta)}
+.lbc-tab{margin:14px 0 10px;border-top:1px solid var(--lbr-linha)}
+.lbc-linha{display:grid;grid-template-columns:2.1rem 2.6rem 1fr auto 3.2rem;gap:.5rem;align-items:center;
+  padding:.6rem .25rem;border-bottom:1px solid var(--lbr-linha);font-size:.92rem}
+.lbc-linha.lbc-eu{background:#faf8fd}
+.lbc-linha.lbc-eu .lbc-time,.lbc-linha.lbc-eu .lbc-n{font-weight:700;color:var(--lbr-roxo)}
+.lbc-n{color:var(--lbr-cinza);font-size:.8rem}
+.lbc-sig{display:inline-block;font-size:.66rem;letter-spacing:.05em;font-weight:700;color:#fff;
+  background:var(--lbr-roxo);border-radius:3px;padding:.15rem .3rem;text-align:center}
+.lbc-linha.lbc-eu .lbc-sig{background:var(--lbr-ouro);color:var(--lbr-tinta)}
+.lbc-camp{color:var(--lbr-cinza);font-variant-numeric:tabular-nums}
+.lbc-gb{text-align:right;color:var(--lbr-cinza);font-variant-numeric:tabular-nums}
+.lbc-rod{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.lbc-nota{font-size:.78rem;color:var(--lbr-cinza);margin:0}
+.lbc-ver{font-size:.88rem;font-weight:600;color:var(--lbr-roxo);text-decoration:none}
+.lbc-ver:hover{text-decoration:underline}
+@media(max-width:480px){
+  .lbc-linha{grid-template-columns:1.8rem 2.4rem 1fr auto;font-size:.86rem}
+  .lbc-gb{display:none}
+}
+</style>
+
+<div class="row g-5">
+  <div class="lbc-col mt-md-5 mt-4">
+    <section class="lbc-sec">
+      <div class="section-title d-flex"><p>Classificação</p></div>
+
+      <div class="lbc-topo">
+        <span class="lbc-pos">6º no Oeste</span>
+        <span class="lbc-frase">meio jogo atrás do Minnesota, um jogo à frente do Clippers</span>
+      </div>
+
+      <div class="lbc-tab">
+        <div class="lbc-linha">
+          <span class="lbc-n">5º</span>
+          <span class="lbc-sig">MIN</span>
+          <span class="lbc-time">Timberwolves</span>
+          <span class="lbc-camp">24-15</span>
+          <span class="lbc-gb">&mdash;</span>
+        </div>
+        <div class="lbc-linha lbc-eu">
+          <span class="lbc-n">6º</span>
+          <span class="lbc-sig">LAL</span>
+          <span class="lbc-time">Lakers</span>
+          <span class="lbc-camp">23-15</span>
+          <span class="lbc-gb">0,5</span>
+        </div>
+        <div class="lbc-linha">
+          <span class="lbc-n">7º</span>
+          <span class="lbc-sig">LAC</span>
+          <span class="lbc-time">Clippers</span>
+          <span class="lbc-camp">22-16</span>
+          <span class="lbc-gb">1,0</span>
+        </div>
+      </div>
+
+      <div class="lbc-rod">
+        <p class="lbc-nota">Simulação. A temporada 2026-27 começa em 21 de outubro.</p>
+        <a class="lbc-ver" href="https://lakersbrasil.com/classificacao-nba/">Ver a classificação completa do Oeste &rarr;</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="row g-5">
 
             <div class="section-title d-flex justify-content-center">
                 <p>Calendário</p>
